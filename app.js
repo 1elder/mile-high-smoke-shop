@@ -12,8 +12,8 @@ const state = { category: "all", search: "", cart: [], mode: "deliver" };
 
 /* Bilingual ticker phrases */
 const TICKER = {
-  en: ["🔥 Same-day delivery — often under an hour", "🚗 We deliver anywhere in Orlando", "💸 FREE local delivery over $50", "⭐ Join the Mile High Club — earn points on every order", "📱 Text to order: (407) 286-1740"],
-  es: ["🔥 Entrega el mismo día — muchas veces en menos de una hora", "🚗 Entregamos en todo Orlando", "💸 Envío local GRATIS en pedidos de más de $50", "⭐ Únete al Mile High Club — gana puntos en cada pedido", "📱 Escribe para ordenar: (407) 286-1740"]
+  en: ["🔥 Same-day local delivery within 5 miles", "📦 Order online — we ship nationwide on eligible items", "💸 FREE local delivery over $50", "⭐ Join the Mile High Club — earn points on every order", "📱 Text to order: (407) 286-1740"],
+  es: ["🔥 Entrega local el mismo día dentro de 5 millas", "📦 Ordena en línea — enviamos a todo el país en productos elegibles", "💸 Entrega local GRATIS en pedidos de más de $50", "⭐ Únete al Mile High Club — gana puntos en cada pedido", "📱 Escribe para ordenar: (407) 286-1740"]
 };
 
 /* ---------------------------------------------------------------------
@@ -82,6 +82,7 @@ function renderProducts() {
         ${p.brand ? `<div class="card-brand">${p.brand}</div>` : ""}
         <div class="card-name">${p.name}</div>
         <div class="card-desc">${prodDesc(p)}</div>
+        <div class="ship-tag ${p.ship ? "yes" : "no"}">${p.ship ? "📦 " + t("ship.yes") : "📍 " + t("ship.no")}</div>
         <div class="card-foot">
           <div class="card-price">${money(p.price)}</div>
           <button class="add-btn" data-add="${p.id}" ${p.stock === "out" ? "disabled" : ""}>${p.stock === "out" ? t("btn.sold") : t("btn.add")}</button>
@@ -107,7 +108,14 @@ function changeQty(id, d) {
 }
 function removeLine(id) { state.cart = state.cart.filter(l => l.id !== id); updateCart(); }
 function cartSubtotal() { return state.cart.reduce((s, l) => { const p = PRODUCTS.find(p => p.id === l.id); return s + (p ? p.price * l.qty : 0); }, 0); }
-function deliveryFee(sub) { if (state.mode === "pickup" || sub === 0) return 0; return sub >= 50 ? 0 : 5; }
+function deliveryFee(sub) {
+  if (state.mode === "pickup" || sub === 0) return 0;
+  if (state.mode === "ship") return sub >= 75 ? 0 : 6;   // flat shipping, free over $75
+  return sub >= 50 ? 0 : 5;                               // local delivery, free over $50
+}
+function nonShippableInCart() {
+  return state.cart.filter(l => { const p = PRODUCTS.find(p => p.id === l.id); return p && p.ship === false; }).length;
+}
 
 function renderCart() {
   const box = $("#cart-items");
@@ -134,14 +142,23 @@ function renderCart() {
 
   const sub = cartSubtotal(), fee = deliveryFee(sub);
   $("#sub").textContent = money(sub);
-  $("#fee-label").textContent = state.mode === "pickup" ? t("cart.pickuprow") : t("cart.delivery");
-  $("#fee").textContent = (fee === 0) ? (state.mode === "pickup" || sub >= 50 ? t("cart.free") : money(0)) : money(fee);
+  const feeLabelKey = state.mode === "pickup" ? "cart.pickuprow" : state.mode === "ship" ? "cart.shiprow" : "cart.delivery";
+  $("#fee-label").textContent = t(feeLabelKey);
+  $("#fee").textContent = fee === 0 ? t("cart.free") : money(fee);
   $("#points").textContent = Math.floor(sub);
   $("#total").textContent = money(sub + fee);
 
+  // Free-threshold nudge
   const note = $("#deliver-note");
   if (state.mode === "deliver" && sub > 0 && sub < 50) { note.textContent = t("cart.freenote", { amt: money(50 - sub) }); note.classList.add("show"); }
+  else if (state.mode === "ship" && sub > 0 && sub < 75) { note.textContent = t("cart.shipnote", { amt: money(75 - sub) }); note.classList.add("show"); }
   else note.classList.remove("show");
+
+  // Non-shippable warning (PACT Act items in cart while shipping)
+  const warn = $("#ship-warn");
+  const bad = nonShippableInCart();
+  if (state.mode === "ship" && bad > 0) { warn.textContent = t("cart.shipwarn", { n: bad }); warn.classList.add("show"); }
+  else warn.classList.remove("show");
 }
 function updateCart() { $("#cart-count").textContent = state.cart.reduce((n, l) => n + l.qty, 0); renderCart(); }
 
@@ -168,7 +185,7 @@ function checkZip() {
   box.className = "zip-result";
   if (!/^\d{5}$/.test(zip)) { box.classList.add("bad"); box.textContent = t("zip.bad"); return; }
   if (DELIVERY_ZONE_ZIPS.includes(zip)) { box.classList.add("ok"); box.innerHTML = t("zip.ok"); }
-  else { box.classList.add("uber"); box.innerHTML = t("zip.uber"); }
+  else { box.classList.add("uber"); box.innerHTML = t("zip.out"); }
 }
 $("#zip-check").addEventListener("click", checkZip);
 $("#zip-input").addEventListener("keydown", e => { if (e.key === "Enter") checkZip(); });

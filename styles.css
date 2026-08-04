@@ -487,3 +487,12 @@ footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 56
 .al-btn { padding: 7px 16px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.04); color: var(--muted); font-size: 13px; font-weight: 600; }
 .al-btn:hover { color: var(--text); border-color: rgba(217,178,95,.5); }
 @media (max-width: 900px) { .lang-toggle { padding: 8px 11px; } }
+
+/* ---- Shipping eligibility labels ---- */
+.ship-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; margin: 8px 0 2px; padding: 3px 9px; border-radius: 999px; width: fit-content; }
+.ship-tag.yes { color: var(--green); background: var(--green-dim); border: 1px solid rgba(111,208,140,.3); }
+.ship-tag.no  { color: var(--muted); background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+.ship-warn { display: none; font-size: 12px; color: var(--gold-2); background: rgba(217,178,95,.1); border: 1px solid rgba(217,178,95,.25); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; line-height: 1.4; }
+.ship-warn.show { display: block; }
+/* three-way fulfillment toggle stays readable on small screens */
+.fulfill button { padding: 11px 6px; font-size: 13px; }

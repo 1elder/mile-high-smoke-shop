@@ -71,6 +71,19 @@ const PRODUCTS = [
   { id: 25, name: "7-Day Detox Program",         category: "detox",  price: 49.99, brand: "CleanseNow", desc: "Complete week-long herbal cleanse kit.", desc_es: "Kit completo de limpieza herbal para una semana.", tags: ["New"], stock: "in" },
 ];
 
+/* ---------------------------------------------------------------------
+   SHIPPING ELIGIBILITY (PACT Act compliance)
+   Federal law (PACT Act) bans shipping vapes/e-cigs/nicotine/tobacco to
+   consumers — USPS/UPS/FedEx/DHL all refuse. Those items are LOCAL
+   DELIVERY or IN-STORE ONLY. Everything else can ship nationwide.
+   When real inventory arrives: set p.ship = false on any vape / e-liquid /
+   nicotine / tobacco / shisha item; leave it true for accessories, glass,
+   non-vape CBD, rolling supplies, etc.
+   --------------------------------------------------------------------- */
+const NON_SHIP_CATEGORIES = ["vapes"];          // all vapes/e-liquids = ENDS, cannot ship
+const NON_SHIP_IDS = [10, 13];                  // shisha (tobacco), Delta-8 gummies (state-restricted)
+PRODUCTS.forEach(p => { p.ship = !(NON_SHIP_CATEGORIES.includes(p.category) || NON_SHIP_IDS.includes(p.id)); });
+
 /* Delivery zone: ZIP codes within the ~5-mile own-driver radius of the
    Southland Blvd store. Everything else routes to Uber delivery.
    >>> Replace with the owner's real delivery ZIPs when confirmed. <<< */

@@ -23,7 +23,7 @@ const I18N = {
 
     "hero.badge": "Now delivering same-day across Orlando",
     "hero.h1": "Orlando's smoke shop that comes <em>to you.</em>",
-    "hero.sub": "Vapes, glass, hookah, CBD and more — order online and we deliver same-day, often in under an hour. Free delivery over $50 within 5 miles. Everywhere else in Orlando, we've got Uber.",
+    "hero.sub": "Vapes, glass, hookah, CBD and more. Order online for same-day local delivery within 5 miles, in-store pickup, or nationwide shipping on eligible items.",
     "hero.cta1": "Start your order →", "hero.cta2": "How delivery works",
     "hero.stat1": "Products in stock", "hero.stat2": "Avg. delivery time", "hero.stat3": "Open every week",
 
@@ -31,8 +31,8 @@ const I18N = {
     "zip.sub": "Enter your ZIP to see your delivery option — instant.",
     "zip.btn": "Check",
     "zip.bad": "Please enter a valid 5-digit ZIP code.",
-    "zip.ok": "🛵 <strong>You're in our free-driver zone!</strong> Same-day local delivery available.",
-    "zip.uber": "🚗 <strong>We deliver to you via Uber.</strong> Fast, tracked delivery to your door.",
+    "zip.ok": "🛵 <strong>You're in our 5-mile delivery zone!</strong> Same-day local delivery available.",
+    "zip.out": "📦 <strong>Outside our 5-mile delivery zone.</strong> You can still order online for nationwide shipping on eligible items, or pick up in store.",
 
     "diff.1t": "Fastest in Orlando", "diff.1d": "Same-day, often under an hour",
     "diff.2t": "Mile High Club", "diff.2d": "Earn points on every order",
@@ -47,7 +47,7 @@ const I18N = {
     "del.eyebrow": "Delivery", "del.h": "Two ways to get it fast",
     "del.p": "Order online in minutes. How it reaches you depends on how close you are to the shop.",
     "del.1tag": "0–5 MILES", "del.1h": "Our own driver", "del.1p": "Within 5 miles of the store? Our driver hand-delivers your order the same day, often within the hour. Free over $50.",
-    "del.2tag": "5+ MILES", "del.2h": "Uber delivery", "del.2p": "Farther out in Orlando? We hand your order to Uber for fast, tracked delivery straight to your door.",
+    "del.2tag": "NATIONWIDE", "del.2h": "Ship to your door", "del.2p": "Order online and we ship eligible items (glass, accessories, CBD and more) anywhere in the U.S. Vapes and tobacco stay local, by federal law.",
     "del.3tag": "IN STORE", "del.3h": "Pickup & browse", "del.3p": "Order ahead for pickup, or come explore the full selection on Southland Blvd by the Florida Mall.",
 
     "shop.eyebrow": "Shop", "shop.h": "Browse the store",
@@ -79,8 +79,9 @@ const I18N = {
     "store.cta": "Get directions →",
 
     "faq.eyebrow": "FAQ", "faq.h": "Good to know",
-    "faq.q1": "Do you deliver, and how fast?", "faq.a1": "Yes! Within about 5 miles of our Southland Blvd store, our own driver brings it same-day — often in under an hour. Anywhere else in Orlando, we send it via Uber for fast, tracked delivery.",
-    "faq.q2": "How much is delivery?", "faq.a2": "Local delivery is free on orders over $50, and a small flat fee under that. Uber delivery is quoted at checkout based on distance.",
+    "faq.q1": "Do you deliver, and how fast?", "faq.a1": "Yes! Within about 5 miles of our Southland Blvd store, our own driver brings it same-day, often in under an hour. Outside that range you can order online for nationwide shipping on eligible items, or pick up in store.",
+    "faq.q2": "How much is delivery or shipping?", "faq.a2": "Local delivery is free on orders over $50, and a small flat fee under that. Shipping is a flat rate, free on eligible orders over $75.",
+    "faq.q6": "Can you ship vapes to me?", "faq.a6": "No. By federal law (the PACT Act), vapes, e-liquids, and tobacco cannot be shipped to customers, and no carrier will handle them. Those items are available for local delivery within 5 miles or in store. Accessories, glass, non-vape CBD and more can ship nationwide.",
     "faq.q3": "Where are you located?", "faq.a3": "7400 Southland Blvd #113, Orlando, FL 32809 — right by the Florida Mall, just off Orange Blossom Trail.",
     "faq.q4": "What are your hours?", "faq.a4": "We're open every single day, 10:00 AM to 11:00 PM.",
     "faq.q5": "Do I need to be 21?", "faq.a5": "Yes. You must be 21 or older. We verify ID on delivery and in store — no exceptions.",
@@ -100,12 +101,15 @@ const I18N = {
     "mb.call": "📞 Call",
     "slide.h": "First order? Take 10% off.", "slide.p": "Join the list and we'll text you a code.", "slide.cta": "Get my code",
 
-    "cart.title": "Your Cart", "cart.deliver": "🛵 Delivery", "cart.pickup": "🏬 Pickup",
-    "cart.subtotal": "Subtotal", "cart.delivery": "Delivery", "cart.pickuprow": "Pickup",
+    "cart.title": "Your Cart", "cart.deliver": "🛵 Delivery", "cart.ship": "📦 Ship", "cart.pickup": "🏬 Pickup",
+    "cart.subtotal": "Subtotal", "cart.delivery": "Delivery", "cart.shiprow": "Shipping", "cart.pickuprow": "Pickup",
     "cart.points": "⭐ Points you'll earn", "cart.total": "Total", "cart.checkout": "Checkout",
     "cart.empty": "Your cart is empty.<br/>Add something from the shop.",
     "cart.remove": "Remove", "cart.free": "Free",
     "cart.freenote": "Add {amt} more for free local delivery.",
+    "cart.shipnote": "Add {amt} more for free shipping.",
+    "cart.shipwarn": "⚠ {n} item(s) in your cart can't be shipped (vape/tobacco). They're available for local delivery or in-store pickup.",
+    "ship.yes": "Ships nationwide", "ship.no": "Local / in-store only",
     "toast.added": "Added {name}",
     "checkout.demo": "✓ Demo checkout — {total}. Payment wiring comes next.",
   },
@@ -122,7 +126,7 @@ const I18N = {
 
     "hero.badge": "Ahora con entrega el mismo día en todo Orlando",
     "hero.h1": "La smoke shop de Orlando que llega <em>hasta ti.</em>",
-    "hero.sub": "Vapes, vidrio, hookah, CBD y más — ordena en línea y te lo entregamos el mismo día, muchas veces en menos de una hora. Envío gratis en pedidos de más de $50 dentro de 5 millas. Para el resto de Orlando, tenemos Uber.",
+    "hero.sub": "Vapes, vidrio, hookah, CBD y más. Ordena en línea para entrega local el mismo día dentro de 5 millas, recoger en tienda, o envío a todo el país en productos elegibles.",
     "hero.cta1": "Empieza tu pedido →", "hero.cta2": "Cómo funciona la entrega",
     "hero.stat1": "Productos en stock", "hero.stat2": "Tiempo de entrega prom.", "hero.stat3": "Abierto toda la semana",
 
@@ -130,8 +134,8 @@ const I18N = {
     "zip.sub": "Ingresa tu código postal para ver tu opción de entrega — al instante.",
     "zip.btn": "Verificar",
     "zip.bad": "Por favor ingresa un código postal válido de 5 dígitos.",
-    "zip.ok": "🛵 <strong>¡Estás en nuestra zona de entrega propia!</strong> Entrega local el mismo día disponible.",
-    "zip.uber": "🚗 <strong>Te entregamos por medio de Uber.</strong> Entrega rápida y rastreable hasta tu puerta.",
+    "zip.ok": "🛵 <strong>¡Estás en nuestra zona de entrega de 5 millas!</strong> Entrega local el mismo día disponible.",
+    "zip.out": "📦 <strong>Estás fuera de nuestra zona de entrega de 5 millas.</strong> Aún puedes ordenar en línea con envío a todo el país en productos elegibles, o recoger en tienda.",
 
     "diff.1t": "Los más rápidos de Orlando", "diff.1d": "El mismo día, muchas veces en menos de una hora",
     "diff.2t": "Mile High Club", "diff.2d": "Gana puntos en cada pedido",
@@ -146,7 +150,7 @@ const I18N = {
     "del.eyebrow": "Entrega", "del.h": "Dos maneras de recibirlo rápido",
     "del.p": "Ordena en línea en minutos. Cómo te llega depende de qué tan cerca estés de la tienda.",
     "del.1tag": "0–5 MILLAS", "del.1h": "Nuestro propio chofer", "del.1p": "¿A menos de 5 millas de la tienda? Nuestro chofer te lo entrega en mano el mismo día, muchas veces en menos de una hora. Gratis en pedidos de más de $50.",
-    "del.2tag": "5+ MILLAS", "del.2h": "Entrega por Uber", "del.2p": "¿Más lejos en Orlando? Le entregamos tu pedido a Uber para una entrega rápida y rastreable hasta tu puerta.",
+    "del.2tag": "TODO EL PAÍS", "del.2h": "Envío a tu puerta", "del.2p": "Ordena en línea y enviamos productos elegibles (vidrio, accesorios, CBD y más) a cualquier parte de EE. UU. Los vapes y el tabaco solo se entregan localmente, por ley federal.",
     "del.3tag": "EN TIENDA", "del.3h": "Recoge y explora", "del.3p": "Ordena con anticipación para recoger, o ven a explorar toda la selección en Southland Blvd, junto al Florida Mall.",
 
     "shop.eyebrow": "Tienda", "shop.h": "Explora la tienda",
@@ -178,8 +182,9 @@ const I18N = {
     "store.cta": "Cómo llegar →",
 
     "faq.eyebrow": "Preguntas", "faq.h": "Bueno saber",
-    "faq.q1": "¿Hacen entregas, y qué tan rápido?", "faq.a1": "¡Sí! Dentro de unas 5 millas de nuestra tienda en Southland Blvd, nuestro propio chofer lo lleva el mismo día — muchas veces en menos de una hora. Para el resto de Orlando, lo enviamos por Uber para una entrega rápida y rastreable.",
-    "faq.q2": "¿Cuánto cuesta la entrega?", "faq.a2": "La entrega local es gratis en pedidos de más de $50, y una pequeña tarifa fija por debajo de eso. La entrega por Uber se cotiza al pagar según la distancia.",
+    "faq.q1": "¿Hacen entregas, y qué tan rápido?", "faq.a1": "¡Sí! Dentro de unas 5 millas de nuestra tienda en Southland Blvd, nuestro propio chofer lo lleva el mismo día, muchas veces en menos de una hora. Fuera de ese rango, puedes ordenar en línea con envío a todo el país en productos elegibles, o recoger en tienda.",
+    "faq.q2": "¿Cuánto cuesta la entrega o el envío?", "faq.a2": "La entrega local es gratis en pedidos de más de $50, y una pequeña tarifa fija por debajo de eso. El envío es una tarifa fija, gratis en pedidos elegibles de más de $75.",
+    "faq.q6": "¿Pueden enviarme vapes?", "faq.a6": "No. Por ley federal (la Ley PACT), los vapes, e-líquidos y el tabaco no se pueden enviar a los clientes, y ninguna paquetería los transporta. Esos productos están disponibles para entrega local dentro de 5 millas o en tienda. Accesorios, vidrio, CBD sin vape y más sí se pueden enviar a todo el país.",
     "faq.q3": "¿Dónde están ubicados?", "faq.a3": "7400 Southland Blvd #113, Orlando, FL 32809 — justo al lado del Florida Mall, cerca de Orange Blossom Trail.",
     "faq.q4": "¿Cuál es su horario?", "faq.a4": "Abrimos todos los días, de 10:00 AM a 11:00 PM.",
     "faq.q5": "¿Necesito tener 21 años?", "faq.a5": "Sí. Debes tener 21 años o más. Verificamos identificación en la entrega y en tienda — sin excepciones.",
@@ -199,12 +204,15 @@ const I18N = {
     "mb.call": "📞 Llamar",
     "slide.h": "¿Primer pedido? Toma 10% de descuento.", "slide.p": "Únete a la lista y te enviamos un código por texto.", "slide.cta": "Obtener mi código",
 
-    "cart.title": "Tu Carrito", "cart.deliver": "🛵 Entrega", "cart.pickup": "🏬 Recoger",
-    "cart.subtotal": "Subtotal", "cart.delivery": "Entrega", "cart.pickuprow": "Recoger",
+    "cart.title": "Tu Carrito", "cart.deliver": "🛵 Entrega", "cart.ship": "📦 Envío", "cart.pickup": "🏬 Recoger",
+    "cart.subtotal": "Subtotal", "cart.delivery": "Entrega", "cart.shiprow": "Envío", "cart.pickuprow": "Recoger",
     "cart.points": "⭐ Puntos que ganarás", "cart.total": "Total", "cart.checkout": "Pagar",
     "cart.empty": "Tu carrito está vacío.<br/>Agrega algo de la tienda.",
     "cart.remove": "Quitar", "cart.free": "Gratis",
-    "cart.freenote": "Agrega {amt} más para envío local gratis.",
+    "cart.freenote": "Agrega {amt} más para entrega local gratis.",
+    "cart.shipnote": "Agrega {amt} más para envío gratis.",
+    "cart.shipwarn": "⚠ {n} producto(s) en tu carrito no se pueden enviar (vape/tabaco). Están disponibles para entrega local o para recoger en tienda.",
+    "ship.yes": "Envío a todo el país", "ship.no": "Solo local / en tienda",
     "toast.added": "Agregado: {name}",
     "checkout.demo": "✓ Pago de demostración — {total}. La integración de pago viene después.",
   }
