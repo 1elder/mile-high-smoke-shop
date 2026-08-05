@@ -31,15 +31,15 @@ const I18N = {
     "zip.sub": "Enter your ZIP to see your delivery option — instant.",
     "zip.btn": "Check",
     "zip.bad": "Please enter a valid 5-digit ZIP code.",
-    "zip.ok": "🛵 <strong>You're in our 5-mile delivery zone!</strong> Same-day local delivery available.",
-    "zip.out": "📦 <strong>Outside our 5-mile delivery zone.</strong> You can still order online for nationwide shipping on eligible items, or pick up in store.",
+    "zip.ok": "<strong>You're in our 5-mile delivery zone!</strong> Same-day local delivery available.",
+    "zip.out": "<strong>Outside our 5-mile delivery zone.</strong> You can still order online for nationwide shipping on eligible items, or pick up in store.",
 
     "diff.1t": "Fastest in Orlando", "diff.1d": "Same-day, often under an hour",
     "diff.2t": "Mile High Club", "diff.2d": "Earn points on every order",
     "diff.3t": "Lab-tested & authentic", "diff.3d": "No fakes, ever",
     "diff.4t": "Price-match promise", "diff.4d": "See it cheaper? We'll match it",
 
-    "deal.flag": "🔥 Deal of the Day", "deal.h": "20% off all disposables",
+    "deal.flag": "Deal of the Day", "deal.h": "20% off all disposables",
     "deal.p": "Every disposable vape in the store, today only. Delivered to your door or ready for pickup.",
     "deal.cta": "Shop the deal →", "deal.ends": "Ends in",
     "unit.hrs": "hrs", "unit.min": "min", "unit.sec": "sec", "unit.days": "days",
@@ -69,8 +69,8 @@ const I18N = {
 
     "sub.eyebrow": "Never run out", "sub.h": "Subscribe & Save 15%",
     "sub.p": "Put your regulars — juice, coils, papers, whatever you go through — on auto-delivery. Pick your schedule, save 15% every time, skip or cancel anytime. We show up before you're empty.",
-    "sub.l1": "✓ 15% off every recurring order", "sub.l2": "✓ Free local delivery, always", "sub.l3": "✓ Pause, skip, or cancel in one tap",
-    "sub.cta": "Set up a subscription →", "sub.b1": "🔁 Every 2 weeks", "sub.b2": "💧 Your juice", "sub.b3": "🔩 Your coils",
+    "sub.l1": "15% off every recurring order", "sub.l2": "Free local delivery, always", "sub.l3": "Pause, skip, or cancel in one tap",
+    "sub.cta": "Set up a subscription →", "sub.b1": "Every 2 weeks", "sub.b2": "Your juice", "sub.b3": "Your coils",
 
     "store.eyebrow": "Visit us", "store.h": "Come see the whole collection",
     "store.p": "The full Mile High experience lives in our store by the Florida Mall — knowledgeable staff, exclusive glass, and the newest drops before they hit the site.",
@@ -98,12 +98,12 @@ const I18N = {
     "foot.warn": "⚠ You must be 21+ to purchase. Not for sale to minors.",
     "cat.vapes": "Vapes", "cat.glass": "Glass", "cat.cbd": "CBD & Delta",
 
-    "mb.call": "📞 Call",
+    "mb.call": "Call",
     "slide.h": "First order? Take 10% off.", "slide.p": "Join the list and we'll text you a code.", "slide.cta": "Get my code",
 
-    "cart.title": "Your Cart", "cart.deliver": "🛵 Delivery", "cart.ship": "📦 Ship", "cart.pickup": "🏬 Pickup",
+    "cart.title": "Your Cart", "cart.deliver": "Delivery", "cart.ship": "Ship", "cart.pickup": "Pickup",
     "cart.subtotal": "Subtotal", "cart.delivery": "Delivery", "cart.shiprow": "Shipping", "cart.pickuprow": "Pickup",
-    "cart.points": "⭐ Points you'll earn", "cart.total": "Total", "cart.checkout": "Checkout",
+    "cart.points": "Points you'll earn", "cart.total": "Total", "cart.checkout": "Checkout",
     "cart.empty": "Your cart is empty.<br/>Add something from the shop.",
     "cart.remove": "Remove", "cart.free": "Free",
     "cart.freenote": "Add {amt} more for free local delivery.",
@@ -134,15 +134,15 @@ const I18N = {
     "zip.sub": "Ingresa tu código postal para ver tu opción de entrega — al instante.",
     "zip.btn": "Verificar",
     "zip.bad": "Por favor ingresa un código postal válido de 5 dígitos.",
-    "zip.ok": "🛵 <strong>¡Estás en nuestra zona de entrega de 5 millas!</strong> Entrega local el mismo día disponible.",
-    "zip.out": "📦 <strong>Estás fuera de nuestra zona de entrega de 5 millas.</strong> Aún puedes ordenar en línea con envío a todo el país en productos elegibles, o recoger en tienda.",
+    "zip.ok": "<strong>¡Estás en nuestra zona de entrega de 5 millas!</strong> Entrega local el mismo día disponible.",
+    "zip.out": "<strong>Estás fuera de nuestra zona de entrega de 5 millas.</strong> Aún puedes ordenar en línea con envío a todo el país en productos elegibles, o recoger en tienda.",
 
     "diff.1t": "Los más rápidos de Orlando", "diff.1d": "El mismo día, muchas veces en menos de una hora",
     "diff.2t": "Mile High Club", "diff.2d": "Gana puntos en cada pedido",
     "diff.3t": "Probado en laboratorio y auténtico", "diff.3d": "Nunca imitaciones",
     "diff.4t": "Igualamos el precio", "diff.4d": "¿Lo viste más barato? Lo igualamos",
 
-    "deal.flag": "🔥 Oferta del Día", "deal.h": "20% de descuento en todos los desechables",
+    "deal.flag": "Oferta del Día", "deal.h": "20% de descuento en todos los desechables",
     "deal.p": "Todos los vapes desechables de la tienda, solo hoy. Entregado a tu puerta o listo para recoger.",
     "deal.cta": "Ver la oferta →", "deal.ends": "Termina en",
     "unit.hrs": "hrs", "unit.min": "min", "unit.sec": "seg", "unit.days": "días",
@@ -172,8 +172,8 @@ const I18N = {
 
     "sub.eyebrow": "Nunca te quedes sin", "sub.h": "Suscríbete y Ahorra 15%",
     "sub.p": "Pon tus productos de siempre — líquido, resistencias, papel, lo que uses — en entrega automática. Elige tu horario, ahorra 15% cada vez, salta o cancela cuando quieras. Llegamos antes de que se te acabe.",
-    "sub.l1": "✓ 15% de descuento en cada pedido recurrente", "sub.l2": "✓ Entrega local gratis, siempre", "sub.l3": "✓ Pausa, salta o cancela con un toque",
-    "sub.cta": "Crear una suscripción →", "sub.b1": "🔁 Cada 2 semanas", "sub.b2": "💧 Tu líquido", "sub.b3": "🔩 Tus resistencias",
+    "sub.l1": "15% de descuento en cada pedido recurrente", "sub.l2": "Entrega local gratis, siempre", "sub.l3": "Pausa, salta o cancela con un toque",
+    "sub.cta": "Crear una suscripción →", "sub.b1": "Cada 2 semanas", "sub.b2": "Tu líquido", "sub.b3": "Tus resistencias",
 
     "store.eyebrow": "Visítanos", "store.h": "Ven a ver toda la colección",
     "store.p": "La experiencia completa de Mile High está en nuestra tienda junto al Florida Mall — personal con experiencia, vidrio exclusivo y los nuevos productos antes de que lleguen al sitio.",
@@ -201,12 +201,12 @@ const I18N = {
     "foot.warn": "⚠ Debes tener 21+ para comprar. No se vende a menores.",
     "cat.vapes": "Vapes", "cat.glass": "Vidrio", "cat.cbd": "CBD y Delta",
 
-    "mb.call": "📞 Llamar",
+    "mb.call": "Llamar",
     "slide.h": "¿Primer pedido? Toma 10% de descuento.", "slide.p": "Únete a la lista y te enviamos un código por texto.", "slide.cta": "Obtener mi código",
 
-    "cart.title": "Tu Carrito", "cart.deliver": "🛵 Entrega", "cart.ship": "📦 Envío", "cart.pickup": "🏬 Recoger",
+    "cart.title": "Tu Carrito", "cart.deliver": "Entrega", "cart.ship": "Envío", "cart.pickup": "Recoger",
     "cart.subtotal": "Subtotal", "cart.delivery": "Entrega", "cart.shiprow": "Envío", "cart.pickuprow": "Recoger",
-    "cart.points": "⭐ Puntos que ganarás", "cart.total": "Total", "cart.checkout": "Pagar",
+    "cart.points": "Puntos que ganarás", "cart.total": "Total", "cart.checkout": "Pagar",
     "cart.empty": "Tu carrito está vacío.<br/>Agrega algo de la tienda.",
     "cart.remove": "Quitar", "cart.free": "Gratis",
     "cart.freenote": "Agrega {amt} más para entrega local gratis.",

@@ -496,3 +496,108 @@ footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 56
 .ship-warn.show { display: block; }
 /* three-way fulfillment toggle stays readable on small screens */
 .fulfill button { padding: 11px 6px; font-size: 13px; }
+
+/* =====================================================================
+   CRAFT PASS  (impeccable · emil kowalski · ui-ux pro max)
+   Real icon system, themed browser surfaces, one focal moment,
+   single-source elevation, tactile feedback, tabular numerals.
+   ===================================================================== */
+:root { --ease: cubic-bezier(.16,1,.3,1); }
+
+/* ---- Icon system (replaces all emoji) ---- */
+.ico { width: 1.05em; height: 1.05em; display: inline-block; vertical-align: -0.18em; flex-shrink: 0; }
+.step .ic, .diff .di, .club-ic, .dc-icon { color: var(--gold); }
+.step .ic .ico { width: 24px; height: 24px; }
+.diff .di .ico { width: 22px; height: 22px; }
+.club-ic .ico { width: 26px; height: 26px; }
+.dc-icon .ico { width: 24px; height: 24px; }
+.dc-icon { display: inline-flex; width: 46px; height: 46px; border-radius: 12px; align-items: center; justify-content: center; background: var(--green-dim); color: var(--green); margin-bottom: 12px; }
+.fulfill button .ico, .cart-btn .ico, .lang-toggle .ico, .call-link .ico, .mb-call .ico, .ship-tag .ico, .info-row .ic .ico, .ig-link .ico { width: 1.02em; height: 1.02em; }
+.info-row .ic { color: var(--gold); }
+.deal-flag .ico { width: 15px; height: 15px; vertical-align: -0.2em; margin-right: 4px; }
+.search-box .ic { display: inline-flex; }
+
+/* ---- Browser surfaces themed from the palette (built, not assembled) ---- */
+::selection { background: rgba(217,178,95,.30); color: #fff; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+input, textarea { caret-color: var(--gold); }
+* { scrollbar-color: rgba(217,178,95,.55) transparent; scrollbar-width: thin; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(217,178,95,.35); border-radius: 999px; border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: rgba(217,178,95,.6); }
+
+/* ---- Tabular numerals for counters, timers, prices ---- */
+.cd span, .card-price, .summary-row span, .hero-stats .num, .cart-count { font-variant-numeric: tabular-nums; }
+
+/* ---- Single-source elevation: no ghost cards (border OR shadow, not both) ---- */
+.card { transition: transform .25s var(--ease), border-color .25s var(--ease); }
+.card:hover { transform: translateY(-4px); border-color: rgba(217,178,95,.55); box-shadow: none; }
+.club-card { transition: transform .25s var(--ease), border-color .25s var(--ease); }
+.step { transition: transform .25s var(--ease), border-color .25s var(--ease); }
+
+/* ---- Tactile press feedback (Emil: interactions feel physical) ---- */
+.btn, .add-btn, .cart-btn, .fulfill button, .zip-row button, .ref-box button, .lang-toggle, .qty button, .cat-btn {
+  transition: transform .12s var(--ease), background .15s var(--ease), border-color .15s var(--ease), box-shadow .15s var(--ease), color .15s var(--ease);
+}
+.btn:active, .add-btn:active, .zip-row button:active, .ref-box button:active, .cart-btn:active, .fulfill button:active, .lang-toggle:active { transform: scale(.96); }
+.btn-gold:active { transform: translateY(0) scale(.97); }
+
+/* ---- One focal moment: rehearsed hero entrance (replaces per-section reveals) ---- */
+@keyframes riseIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero-copy > * { animation: riseIn .7s var(--ease) both; }
+.hero-copy > *:nth-child(1) { animation-delay: .04s; }
+.hero-copy > *:nth-child(2) { animation-delay: .10s; }
+.hero-copy > *:nth-child(3) { animation-delay: .17s; }
+.hero-copy > *:nth-child(4) { animation-delay: .24s; }
+.hero-visual { animation: riseIn .8s var(--ease) .30s both; }
+@media (prefers-reduced-motion: reduce) { .hero-copy > *, .hero-visual { animation: none; } }
+
+/* ---- Category filter: quieter, text-led (cards aren't the only container) ---- */
+.cat-btn { font-weight: 500; }
+.cat-btn.active { color: var(--gold); background: rgba(217,178,95,.08); border-color: rgba(217,178,95,.3); }
+
+/* ---- Ship tag with inline icon ---- */
+.ship-tag .ico { margin-right: 2px; }
+
+/* ---- Eyebrows removed (impeccable: the heading carries its own weight) ---- */
+.eyebrow { display: none; }
+
+/* ---- Brand mark icon ---- */
+.brand .mark { color: #201a0c; }
+.brand .mark .ico { width: 20px; height: 20px; }
+
+/* ---- FAQ: icon toggle + fix stray styling on the question text ---- */
+.faq-q > span:not(.faq-plus) { color: inherit; font-size: 16px; transform: none; }
+.faq-plus { color: var(--gold); display: inline-flex; align-items: center; transition: transform .2s var(--ease); }
+.faq-plus .ico { width: 18px; height: 18px; }
+.faq-item.open .faq-plus { transform: rotate(45deg); }
+
+/* ---- Product / cart placeholder mark ---- */
+.card-img .ph-ico { width: 54px; height: 54px; color: var(--muted); opacity: .45; }
+.thumb .ph-ico { width: 26px; height: 26px; color: var(--muted); }
+
+/* ---- Subscribe floating mark ---- */
+.sub-emoji { color: var(--gold-2); }
+.sub-emoji .ico { width: 118px; height: 118px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.4)); }
+
+/* ---- Toast + slide-in marks ---- */
+.toast .ck { display: inline-flex; }
+.toast .ck .ico { width: 16px; height: 16px; }
+.slidein-ic { color: var(--gold); }
+.slidein-ic .ico { width: 30px; height: 30px; }
+
+/* ---- ZIP result icon ---- */
+.zip-result .ico { vertical-align: -0.16em; margin-right: 3px; }
+
+/* ---- Remaining icon slots ---- */
+.nav-toggle .ico { width: 24px; height: 24px; }
+.sub-list li { display: flex; align-items: center; gap: 9px; }
+.sub-list li .ico { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; }
+.cart-empty .empty-ico { width: 40px; height: 40px; color: var(--muted); opacity: .5; }
+.summary-row.points .ico { width: 15px; height: 15px; color: var(--gold-2); vertical-align: -0.15em; }
+
+/* ---- One focal moment: neutralize repeated per-section reveals ----
+   (impeccable + emil: content visible by default; the hero entrance is
+   the single authored moment. Motion lives in hover/press, smoke, timer.) */
+.reveal { opacity: 1; transform: none; }

@@ -12,8 +12,8 @@ const state = { category: "all", search: "", cart: [], mode: "deliver" };
 
 /* Bilingual ticker phrases */
 const TICKER = {
-  en: ["🔥 Same-day local delivery within 5 miles", "📦 Order online — we ship nationwide on eligible items", "💸 FREE local delivery over $50", "⭐ Join the Mile High Club — earn points on every order", "📱 Text to order: (407) 286-1740"],
-  es: ["🔥 Entrega local el mismo día dentro de 5 millas", "📦 Ordena en línea — enviamos a todo el país en productos elegibles", "💸 Entrega local GRATIS en pedidos de más de $50", "⭐ Únete al Mile High Club — gana puntos en cada pedido", "📱 Escribe para ordenar: (407) 286-1740"]
+  en: ["Same-day local delivery within 5 miles", "Order online — we ship nationwide on eligible items", "Free local delivery over $50", "Join the Mile High Club — earn points on every order", "Text to order: (407) 286-1740"],
+  es: ["Entrega local el mismo día dentro de 5 millas", "Ordena en línea — enviamos a todo el país en productos elegibles", "Entrega local GRATIS en pedidos de más de $50", "Únete al Mile High Club — gana puntos en cada pedido", "Escribe para ordenar: (407) 286-1740"]
 };
 
 /* ---------------------------------------------------------------------
@@ -39,9 +39,7 @@ function renderCategories() {
   const list = $("#cat-list");
   const all = [{ slug: "all", icon: "🛍️", _all: true }, ...CATEGORIES];
   list.innerHTML = all.map(c => `
-    <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">
-      <span class="em">${c.icon}</span> ${c._all ? t("shop.all") : catName(c)}
-    </button>`).join("");
+    <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">${c._all ? t("shop.all") : catName(c)}</button>`).join("");
   $$(".cat-btn").forEach(btn => btn.addEventListener("click", () => {
     state.category = btn.dataset.cat; renderCategories(); renderProducts();
   }));
@@ -74,7 +72,7 @@ function renderProducts() {
   grid.innerHTML = items.map(p => `
     <div class="card">
       <div class="card-img">
-        ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" style="height:100%;width:100%;object-fit:cover;">` : catEmoji(p.category)}
+        ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" style="height:100%;width:100%;object-fit:cover;">` : iconSVG("cloud", "ph-ico")}
         <div class="card-badges">${badgeHTML(p.tags)}</div>
         ${stockHTML(p.stock)}
       </div>
@@ -82,7 +80,7 @@ function renderProducts() {
         ${p.brand ? `<div class="card-brand">${p.brand}</div>` : ""}
         <div class="card-name">${p.name}</div>
         <div class="card-desc">${prodDesc(p)}</div>
-        <div class="ship-tag ${p.ship ? "yes" : "no"}">${p.ship ? "📦 " + t("ship.yes") : "📍 " + t("ship.no")}</div>
+        <div class="ship-tag ${p.ship ? "yes" : "no"}">${iconSVG(p.ship ? "package" : "pin")} ${t(p.ship ? "ship.yes" : "ship.no")}</div>
         <div class="card-foot">
           <div class="card-price">${money(p.price)}</div>
           <button class="add-btn" data-add="${p.id}" ${p.stock === "out" ? "disabled" : ""}>${p.stock === "out" ? t("btn.sold") : t("btn.add")}</button>
@@ -120,14 +118,14 @@ function nonShippableInCart() {
 function renderCart() {
   const box = $("#cart-items");
   if (!state.cart.length) {
-    box.innerHTML = `<div class="cart-empty">🛒<br/><br/>${t("cart.empty")}</div>`;
+    box.innerHTML = `<div class="cart-empty">${iconSVG("bag", "empty-ico")}<br/><br/>${t("cart.empty")}</div>`;
     $("#drawer-foot").style.display = "none"; return;
   }
   $("#drawer-foot").style.display = "block";
   box.innerHTML = state.cart.map(l => {
     const p = PRODUCTS.find(p => p.id === l.id);
     return `<div class="cart-item">
-      <div class="thumb">${catEmoji(p.category)}</div>
+      <div class="thumb">${iconSVG("cloud", "ph-ico")}</div>
       <div class="meta">
         <div class="nm">${p.name}</div>
         <div class="pr">${money(p.price)}</div>
@@ -184,8 +182,8 @@ function checkZip() {
   const zip = $("#zip-input").value.trim(), box = $("#zip-result");
   box.className = "zip-result";
   if (!/^\d{5}$/.test(zip)) { box.classList.add("bad"); box.textContent = t("zip.bad"); return; }
-  if (DELIVERY_ZONE_ZIPS.includes(zip)) { box.classList.add("ok"); box.innerHTML = t("zip.ok"); }
-  else { box.classList.add("uber"); box.innerHTML = t("zip.out"); }
+  if (DELIVERY_ZONE_ZIPS.includes(zip)) { box.classList.add("ok"); box.innerHTML = iconSVG("truck", "zip-ico") + " " + t("zip.ok"); }
+  else { box.classList.add("uber"); box.innerHTML = iconSVG("package", "zip-ico") + " " + t("zip.out"); }
 }
 $("#zip-check").addEventListener("click", checkZip);
 $("#zip-input").addEventListener("keydown", e => { if (e.key === "Enter") checkZip(); });
@@ -350,6 +348,7 @@ $("#capture-form")?.addEventListener("submit", (e) => {
    --------------------------------------------------------------------- */
 LANG = detectLang();
 applyStaticTranslations();
+hydrateIcons();
 buildTicker();
 $("#year").textContent = new Date().getFullYear();
 renderCategories();

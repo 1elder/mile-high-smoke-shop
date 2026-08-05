@@ -114,7 +114,7 @@
   <!-- ===================== HEADER ===================== -->
   <header>
     <div class="wrap nav">
-      <a href="#top" class="brand"><span class="mark">☁</span> MILE HIGH <span>&nbsp;Smoke Shop</span></a>
+      <a href="#top" class="brand"><span class="mark" data-icon="cloud"></span> MILE HIGH <span>&nbsp;Smoke Shop</span></a>
       <nav class="nav-links">
         <a href="#shop"     data-i18n="nav.shop">Shop</a>
         <a href="#delivery" data-i18n="nav.delivery">Delivery</a>
@@ -123,10 +123,10 @@
         <a href="#faq"      data-i18n="nav.faq">FAQ</a>
       </nav>
       <div class="nav-right">
-        <button class="lang-toggle" id="lang-toggle" title="Language / Idioma">🌐 <span id="lang-label">ES</span></button>
-        <a href="tel:+14072861740" class="call-link">📞 (407) 286-1740</a>
-        <button class="cart-btn" id="open-cart">🛒 <span data-i18n="nav.cart">Cart</span> <span class="cart-count" id="cart-count">0</span></button>
-        <button class="nav-toggle" id="nav-toggle">☰</button>
+        <button class="lang-toggle" id="lang-toggle" title="Language / Idioma"><span data-icon="globe"></span> <span id="lang-label">ES</span></button>
+        <a href="tel:+14072861740" class="call-link"><span data-icon="phone"></span> (407) 286-1740</a>
+        <button class="cart-btn" id="open-cart"><span data-icon="bag"></span> <span data-i18n="nav.cart">Cart</span> <span class="cart-count" id="cart-count">0</span></button>
+        <button class="nav-toggle" id="nav-toggle" data-icon="menu" aria-label="Menu"></button>
       </div>
     </div>
   </header>
@@ -143,15 +143,10 @@
           <a href="#shop" class="btn btn-gold btn-lg" data-i18n="hero.cta1">Start your order →</a>
           <a href="#delivery" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">How delivery works</a>
         </div>
-        <div class="hero-stats">
-          <div><div class="num" data-count="500">0</div><div class="lbl" data-i18n="hero.stat1">Products in stock</div></div>
-          <div><div class="num" data-count="60" data-suffix="min">0</div><div class="lbl" data-i18n="hero.stat2">Avg. delivery time</div></div>
-          <div><div class="num" data-count="7" data-suffix-key="unit.days">0</div><div class="lbl" data-i18n="hero.stat3">Open every week</div></div>
-        </div>
       </div>
       <div class="hero-visual">
         <div class="delivery-card">
-          <div class="dc-icon">🛵</div>
+          <div class="dc-icon" data-icon="truck"></div>
           <h3 data-i18n="zip.title">Do we deliver to you?</h3>
           <p data-i18n="zip.sub">Enter your ZIP to see your delivery option — instant.</p>
           <div class="zip-row">
@@ -167,10 +162,10 @@
   <!-- ===================== DIFFERENTIATOR STRIP ===================== -->
   <section class="diff-strip reveal">
     <div class="wrap diff-grid">
-      <div class="diff"><span class="di">⚡</span><div><div class="dt" data-i18n="diff.1t">Fastest in Orlando</div><div class="dd" data-i18n="diff.1d">Same-day, often under an hour</div></div></div>
-      <div class="diff"><span class="di">⭐</span><div><div class="dt" data-i18n="diff.2t">Mile High Club</div><div class="dd" data-i18n="diff.2d">Earn points on every order</div></div></div>
-      <div class="diff"><span class="di">🧪</span><div><div class="dt" data-i18n="diff.3t">Lab-tested &amp; authentic</div><div class="dd" data-i18n="diff.3d">No fakes, ever</div></div></div>
-      <div class="diff"><span class="di">🏷️</span><div><div class="dt" data-i18n="diff.4t">Price-match promise</div><div class="dd" data-i18n="diff.4d">See it cheaper? We'll match it</div></div></div>
+      <div class="diff"><span class="di" data-icon="zap"></span><div><div class="dt" data-i18n="diff.1t">Fastest in Orlando</div><div class="dd" data-i18n="diff.1d">Same-day, often under an hour</div></div></div>
+      <div class="diff"><span class="di" data-icon="star"></span><div><div class="dt" data-i18n="diff.2t">Mile High Club</div><div class="dd" data-i18n="diff.2d">Earn points on every order</div></div></div>
+      <div class="diff"><span class="di" data-icon="shield"></span><div><div class="dt" data-i18n="diff.3t">Lab-tested &amp; authentic</div><div class="dd" data-i18n="diff.3d">No fakes, ever</div></div></div>
+      <div class="diff"><span class="di" data-icon="tag"></span><div><div class="dt" data-i18n="diff.4t">Price-match promise</div><div class="dd" data-i18n="diff.4d">See it cheaper? We'll match it</div></div></div>
     </div>
   </section>
 
@@ -179,7 +174,7 @@
     <div class="wrap">
       <div class="deal-card">
         <div class="deal-left">
-          <span class="deal-flag" data-i18n="deal.flag">🔥 Deal of the Day</span>
+          <span class="deal-flag"><span data-icon="flame"></span> <span data-i18n="deal.flag">Deal of the Day</span></span>
           <h2 data-i18n="deal.h">20% off all disposables</h2>
           <p data-i18n="deal.p">Every disposable vape in the store, today only. Delivered to your door or ready for pickup.</p>
           <a href="#shop" class="btn btn-gold" data-i18n="deal.cta">Shop the deal →</a>
@@ -205,9 +200,9 @@
         <p data-i18n="del.p">Order online in minutes. How it reaches you depends on how close you are to the shop.</p>
       </div>
       <div class="steps">
-        <div class="step"><div class="ic">🛵</div><div class="tag" data-i18n="del.1tag">0–5 MILES</div><h3 data-i18n="del.1h">Our own driver</h3><p data-i18n="del.1p">Within 5 miles of the store? Our driver hand-delivers your order the same day, often within the hour. Free over $50.</p></div>
-        <div class="step"><div class="ic">📦</div><div class="tag" data-i18n="del.2tag">NATIONWIDE</div><h3 data-i18n="del.2h">Ship to your door</h3><p data-i18n="del.2p">Order online and we ship eligible items (glass, accessories, CBD and more) anywhere in the U.S. Vapes and tobacco stay local, by federal law.</p></div>
-        <div class="step"><div class="ic">🏬</div><div class="tag" data-i18n="del.3tag">IN STORE</div><h3 data-i18n="del.3h">Pickup &amp; browse</h3><p data-i18n="del.3p">Order ahead for pickup, or come explore the full selection on Southland Blvd by the Florida Mall.</p></div>
+        <div class="step"><div class="ic" data-icon="truck"></div><div class="tag" data-i18n="del.1tag">0–5 MILES</div><h3 data-i18n="del.1h">Our own driver</h3><p data-i18n="del.1p">Within 5 miles of the store? Our driver hand-delivers your order the same day, often within the hour. Free over $50.</p></div>
+        <div class="step"><div class="ic" data-icon="package"></div><div class="tag" data-i18n="del.2tag">NATIONWIDE</div><h3 data-i18n="del.2h">Ship to your door</h3><p data-i18n="del.2p">Order online and we ship eligible items (glass, accessories, CBD and more) anywhere in the U.S. Vapes and tobacco stay local, by federal law.</p></div>
+        <div class="step"><div class="ic" data-icon="home"></div><div class="tag" data-i18n="del.3tag">IN STORE</div><h3 data-i18n="del.3h">Pickup &amp; browse</h3><p data-i18n="del.3p">Order ahead for pickup, or come explore the full selection on Southland Blvd by the Florida Mall.</p></div>
       </div>
     </div>
   </section>
@@ -227,7 +222,7 @@
         </aside>
         <div>
           <div class="shop-toolbar">
-            <div class="search-box"><span class="ic">🔍</span><input type="text" id="search" data-i18n-ph="shop.search" placeholder="Search products…" /></div>
+            <div class="search-box"><span class="ic" data-icon="search"></span><input type="text" id="search" data-i18n-ph="shop.search" placeholder="Search products…" /></div>
             <div class="result-count" id="result-count"></div>
           </div>
           <div class="grid" id="product-grid"></div>
@@ -246,18 +241,18 @@
       </div>
       <div class="club-grid">
         <div class="club-card">
-          <div class="club-ic">⭐</div>
+          <div class="club-ic" data-icon="star"></div>
           <h3 data-i18n="club.1h">Earn on every order</h3>
           <p data-i18n="club.1p">Get 1 point for every $1 spent, online or in store. 100 points = $10 off. It stacks up fast.</p>
         </div>
         <div class="club-card highlight">
-          <div class="club-ic">🎁</div>
+          <div class="club-ic" data-icon="gift"></div>
           <h3 data-i18n="club.2h">Give $5, Get $5</h3>
           <p data-i18n="club.2p">Share your referral code. Your friend gets $5 off their first order — you get $5 in store credit when they buy.</p>
           <div class="ref-box"><span id="ref-code">MILEHIGH-4072</span><button id="copy-ref" data-i18n="club.copy">Copy code</button></div>
         </div>
         <div class="club-card">
-          <div class="club-ic">🏆</div>
+          <div class="club-ic" data-icon="award"></div>
           <h3 data-i18n="club.3h">Perks that grow</h3>
           <p data-i18n="club.3p">Birthday rewards, early access to new drops, and members-only flash deals texted straight to your phone.</p>
         </div>
@@ -273,17 +268,17 @@
         <h2 data-i18n="sub.h">Subscribe &amp; Save 15%</h2>
         <p data-i18n="sub.p">Put your regulars — juice, coils, papers, whatever you go through — on auto-delivery. Pick your schedule, save 15% every time, skip or cancel anytime. We show up before you're empty.</p>
         <ul class="sub-list">
-          <li data-i18n="sub.l1">✓ 15% off every recurring order</li>
-          <li data-i18n="sub.l2">✓ Free local delivery, always</li>
-          <li data-i18n="sub.l3">✓ Pause, skip, or cancel in one tap</li>
+          <li><span data-icon="check"></span> <span data-i18n="sub.l1">15% off every recurring order</span></li>
+          <li><span data-icon="check"></span> <span data-i18n="sub.l2">Free local delivery, always</span></li>
+          <li><span data-icon="check"></span> <span data-i18n="sub.l3">Pause, skip, or cancel in one tap</span></li>
         </ul>
         <a href="#shop" class="btn btn-gold" data-i18n="sub.cta">Set up a subscription →</a>
       </div>
       <div class="sub-visual">
-        <div class="sub-badge" data-i18n="sub.b1">🔁 Every 2 weeks</div>
-        <div class="sub-badge b2" data-i18n="sub.b2">💧 Your juice</div>
-        <div class="sub-badge b3" data-i18n="sub.b3">🔩 Your coils</div>
-        <div class="sub-emoji">📦</div>
+        <div class="sub-badge"><span data-icon="refresh"></span> <span data-i18n="sub.b1">Every 2 weeks</span></div>
+        <div class="sub-badge b2"><span data-icon="droplet"></span> <span data-i18n="sub.b2">Your juice</span></div>
+        <div class="sub-badge b3"><span data-icon="zap"></span> <span data-i18n="sub.b3">Your coils</span></div>
+        <div class="sub-emoji" data-icon="package"></div>
       </div>
     </div>
   </section>
@@ -299,10 +294,10 @@
         <h2 data-i18n="store.h">Come see the whole collection</h2>
         <p data-i18n="store.p">The full Mile High experience lives in our store by the Florida Mall — knowledgeable staff, exclusive glass, and the newest drops before they hit the site.</p>
         <div class="info-list">
-          <div class="info-row"><span class="ic">📍</span><div><div class="k">7400 Southland Blvd #113</div><div class="v" data-i18n="store.addr">Orlando, FL 32809 — by the Florida Mall</div></div></div>
-          <div class="info-row"><span class="ic">🕒</span><div><div class="k" data-i18n="store.hoursk">Open every day</div><div class="v">10:00 AM – 11:00 PM</div></div></div>
-          <div class="info-row"><span class="ic">📞</span><div><div class="k" data-i18n="store.callk">Call or text to order</div><div class="v"><a href="tel:+14072861740">(407) 286-1740</a></div></div></div>
-          <div class="info-row"><span class="ic">📸</span><div><div class="k" data-i18n="store.followk">Follow the drops</div><div class="v"><a href="https://www.instagram.com/milehighsmokeshop407/" target="_blank" rel="noopener">@milehighsmokeshop407</a></div></div></div>
+          <div class="info-row"><span class="ic" data-icon="pin"></span><div><div class="k">7400 Southland Blvd #113</div><div class="v" data-i18n="store.addr">Orlando, FL 32809 — by the Florida Mall</div></div></div>
+          <div class="info-row"><span class="ic" data-icon="clock"></span><div><div class="k" data-i18n="store.hoursk">Open every day</div><div class="v">10:00 AM – 11:00 PM</div></div></div>
+          <div class="info-row"><span class="ic" data-icon="phone"></span><div><div class="k" data-i18n="store.callk">Call or text to order</div><div class="v"><a href="tel:+14072861740">(407) 286-1740</a></div></div></div>
+          <div class="info-row"><span class="ic" data-icon="instagram"></span><div><div class="k" data-i18n="store.followk">Follow the drops</div><div class="v"><a href="https://www.instagram.com/milehighsmokeshop407/" target="_blank" rel="noopener">@milehighsmokeshop407</a></div></div></div>
         </div>
         <a href="https://www.google.com/maps/dir/?api=1&destination=7400+Southland+Blvd+%23113+Orlando+FL+32809" target="_blank" rel="noopener" class="btn btn-gold" data-i18n="store.cta">Get directions →</a>
       </div>
@@ -314,12 +309,12 @@
     <div class="wrap" style="max-width:820px;">
       <div class="section-head"><div class="eyebrow" data-i18n="faq.eyebrow">FAQ</div><h2 data-i18n="faq.h">Good to know</h2></div>
       <div class="faq-list" id="faq-list">
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q1">Do you deliver, and how fast?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a1">Yes! Within about 5 miles of our Southland Blvd store, our own driver brings it same-day — often in under an hour. Anywhere else in Orlando, we send it via Uber for fast, tracked delivery.</div></div>
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q2">How much is delivery?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a2">Local delivery is free on orders over $50, and a small flat fee under that. Uber delivery is quoted at checkout based on distance.</div></div>
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q3">Where are you located?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a3">7400 Southland Blvd #113, Orlando, FL 32809 — right by the Florida Mall, just off Orange Blossom Trail.</div></div>
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q4">What are your hours?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a4">We're open every single day, 10:00 AM to 11:00 PM.</div></div>
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q5">Do I need to be 21?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a5">Yes. You must be 21 or older. We verify ID on delivery and in store — no exceptions.</div></div>
-        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q6">Can you ship vapes to me?</span><span>+</span></button><div class="faq-a" data-i18n="faq.a6">No. By federal law (the PACT Act), vapes, e-liquids, and tobacco cannot be shipped to customers, and no carrier will handle them. Those items are available for local delivery within 5 miles or in store. Accessories, glass, non-vape CBD and more can ship nationwide.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q1">Do you deliver, and how fast?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a1">Yes! Within about 5 miles of our Southland Blvd store, our own driver brings it same-day — often in under an hour. Anywhere else in Orlando, we send it via Uber for fast, tracked delivery.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q2">How much is delivery?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a2">Local delivery is free on orders over $50, and a small flat fee under that. Uber delivery is quoted at checkout based on distance.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q3">Where are you located?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a3">7400 Southland Blvd #113, Orlando, FL 32809 — right by the Florida Mall, just off Orange Blossom Trail.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q4">What are your hours?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a4">We're open every single day, 10:00 AM to 11:00 PM.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q5">Do I need to be 21?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a5">Yes. You must be 21 or older. We verify ID on delivery and in store — no exceptions.</div></div>
+        <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q6">Can you ship vapes to me?</span><span class="faq-plus" data-icon="plus"></span></button><div class="faq-a" data-i18n="faq.a6">No. By federal law (the PACT Act), vapes, e-liquids, and tobacco cannot be shipped to customers, and no carrier will handle them. Those items are available for local delivery within 5 miles or in store. Accessories, glass, non-vape CBD and more can ship nationwide.</div></div>
       </div>
     </div>
   </section>
@@ -346,7 +341,7 @@
         <div class="foot-col foot-brand">
           <h5 style="font-size:18px;">MILE HIGH <span style="color:var(--gold)">Smoke Shop</span></h5>
           <p data-i18n="foot.blurb">Orlando's premium smoke &amp; vape shop by the Florida Mall. Shop online, get it delivered same-day, or visit us in store.</p>
-          <a href="https://www.instagram.com/milehighsmokeshop407/" target="_blank" rel="noopener" class="ig-link">📸 @milehighsmokeshop407</a>
+          <a href="https://www.instagram.com/milehighsmokeshop407/" target="_blank" rel="noopener" class="ig-link"><span data-icon="instagram"></span> @milehighsmokeshop407</a>
         </div>
         <div class="foot-col"><h5 data-i18n="nav.shop">Shop</h5><a href="#shop" data-i18n="foot.all">All products</a><a href="#shop" data-i18n="cat.vapes">Vapes</a><a href="#shop" data-i18n="cat.glass">Glass</a><a href="#shop" data-i18n="cat.cbd">CBD &amp; Delta</a></div>
         <div class="foot-col"><h5 data-i18n="foot.company">Company</h5><a href="#delivery" data-i18n="nav.delivery">Delivery</a><a href="#club" data-i18n="nav.rewards">Rewards</a><a href="#store" data-i18n="nav.store">Visit store</a><a href="#faq" data-i18n="nav.faq">FAQ</a></div>
@@ -361,14 +356,14 @@
 
   <!-- ===================== STICKY MOBILE ORDER BAR ===================== -->
   <div class="mobile-bar" id="mobile-bar">
-    <a href="tel:+14072861740" class="mb-call" data-i18n="mb.call">📞 Call</a>
+    <a href="tel:+14072861740" class="mb-call"><span data-icon="phone"></span> <span data-i18n="mb.call">Call</span></a>
     <a href="#shop" class="mb-order" data-i18n="hero.cta1">Start your order →</a>
   </div>
 
   <!-- ===================== NEWSLETTER SLIDE-IN ===================== -->
   <div class="slidein" id="slidein">
     <button class="slidein-x" id="slidein-x">×</button>
-    <div class="slidein-ic">🎁</div>
+    <div class="slidein-ic" data-icon="gift"></div>
     <h4 data-i18n="slide.h">First order? Take 10% off.</h4>
     <p data-i18n="slide.p">Join the list and we'll text you a code.</p>
     <a href="#signup" class="btn btn-gold btn-block" id="slidein-cta" data-i18n="slide.cta">Get my code</a>
@@ -381,24 +376,25 @@
     <div class="cart-items" id="cart-items"></div>
     <div class="drawer-foot" id="drawer-foot">
       <div class="fulfill">
-        <button data-mode="deliver" class="active" data-i18n="cart.deliver">🛵 Delivery</button>
-        <button data-mode="ship" data-i18n="cart.ship">📦 Ship</button>
-        <button data-mode="pickup" data-i18n="cart.pickup">🏬 Pickup</button>
+        <button data-mode="deliver" class="active"><span data-icon="truck"></span> <span data-i18n="cart.deliver">Delivery</span></button>
+        <button data-mode="ship"><span data-icon="package"></span> <span data-i18n="cart.ship">Ship</span></button>
+        <button data-mode="pickup"><span data-icon="home"></span> <span data-i18n="cart.pickup">Pickup</span></button>
       </div>
       <div class="ship-warn" id="ship-warn"></div>
       <div class="deliver-note" id="deliver-note"></div>
       <div class="summary-row"><span data-i18n="cart.subtotal">Subtotal</span><span id="sub">$0.00</span></div>
       <div class="summary-row"><span id="fee-label" data-i18n="cart.delivery">Delivery</span><span id="fee">$0.00</span></div>
-      <div class="summary-row points"><span data-i18n="cart.points">⭐ Points you'll earn</span><span id="points">0</span></div>
+      <div class="summary-row points"><span><span data-icon="star"></span> <span data-i18n="cart.points">Points you'll earn</span></span><span id="points">0</span></div>
       <div class="summary-row total"><span data-i18n="cart.total">Total</span><span id="total">$0.00</span></div>
       <button class="btn btn-gold btn-block" id="checkout" data-i18n="cart.checkout">Checkout</button>
     </div>
   </aside>
 
-  <div class="toast" id="toast"><span class="ck">✓</span><span id="toast-msg">Added to cart</span></div>
+  <div class="toast" id="toast"><span class="ck" data-icon="check"></span><span id="toast-msg">Added to cart</span></div>
 
   <script src="products.js"></script>
   <script src="i18n.js"></script>
+  <script src="icons.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
