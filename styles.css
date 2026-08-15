@@ -601,3 +601,22 @@ input, textarea { caret-color: var(--gold); }
    (impeccable + emil: content visible by default; the hero entrance is
    the single authored moment. Motion lives in hover/press, smoke, timer.) */
 .reveal { opacity: 1; transform: none; }
+
+/* ---- Mobile menu (hamburger now opens a real menu) ---- */
+.mobile-menu {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 89;
+  background: rgba(11,13,16,.98); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; padding: 6px 24px 16px;
+  transform: translateY(-10px); opacity: 0; pointer-events: none;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+  box-shadow: 0 24px 40px rgba(0,0,0,.45);
+}
+.mobile-menu.open { transform: none; opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  padding: 15px 4px; color: var(--text); font-size: 17px; font-weight: 600;
+  border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 11px;
+}
+.mobile-menu a:last-child { border-bottom: none; color: var(--gold-2); }
+.mobile-menu .mm-call .ico { width: 1em; height: 1em; }
+@media (min-width: 901px) { .mobile-menu { display: none; } }

@@ -206,7 +206,20 @@ function showToast(msg) {
 /* ---------------------------------------------------------------------
    MOBILE NAV
    --------------------------------------------------------------------- */
-$("#nav-toggle").addEventListener("click", () => $("#shop").scrollIntoView({ behavior: "smooth" }));
+(function mobileMenu() {
+  const toggle = $("#nav-toggle"), menu = $("#mobile-menu");
+  if (!toggle || !menu) return;
+  const close = () => { menu.classList.remove("open"); toggle.innerHTML = iconSVG("menu"); };
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = menu.classList.toggle("open");
+    toggle.innerHTML = iconSVG(open ? "x" : "menu");
+  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+  document.addEventListener("click", (e) => {
+    if (menu.classList.contains("open") && !menu.contains(e.target) && !toggle.contains(e.target)) close();
+  });
+})();
 
 /* =====================================================================
    LANGUAGE TOGGLE
