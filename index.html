@@ -85,7 +85,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
 
@@ -118,6 +118,7 @@
       <nav class="nav-links">
         <a href="#shop"     data-i18n="nav.shop">Shop</a>
         <a href="#delivery" data-i18n="nav.delivery">Delivery</a>
+        <a href="#reviews"  data-i18n="nav.reviews">Reviews</a>
         <a href="#club"     data-i18n="nav.rewards">Rewards</a>
         <a href="#store"    data-i18n="nav.store">Visit Store</a>
         <a href="#faq"      data-i18n="nav.faq">FAQ</a>
@@ -132,6 +133,7 @@
     <div class="mobile-menu" id="mobile-menu">
       <a href="#shop"     data-i18n="nav.shop">Shop</a>
       <a href="#delivery" data-i18n="nav.delivery">Delivery</a>
+      <a href="#reviews"  data-i18n="nav.reviews">Reviews</a>
       <a href="#club"     data-i18n="nav.rewards">Rewards</a>
       <a href="#store"    data-i18n="nav.store">Visit Store</a>
       <a href="#faq"      data-i18n="nav.faq">FAQ</a>
@@ -151,6 +153,10 @@
           <a href="#shop" class="btn btn-gold btn-lg" data-i18n="hero.cta1">Start your order →</a>
           <a href="#delivery" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">How delivery works</a>
         </div>
+        <a href="#reviews" class="hero-proof">
+          <span class="stars"><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span></span>
+          <span><strong>5.0</strong> · <span data-i18n="proof.reviews">208 reviews on Google</span></span>
+        </a>
       </div>
       <div class="hero-visual">
         <div class="delivery-card">
@@ -174,6 +180,39 @@
       <div class="diff"><span class="di" data-icon="star"></span><div><div class="dt" data-i18n="diff.2t">Mile High Club</div><div class="dd" data-i18n="diff.2d">Earn points on every order</div></div></div>
       <div class="diff"><span class="di" data-icon="shield"></span><div><div class="dt" data-i18n="diff.3t">Lab-tested &amp; authentic</div><div class="dd" data-i18n="diff.3d">No fakes, ever</div></div></div>
       <div class="diff"><span class="di" data-icon="tag"></span><div><div class="dt" data-i18n="diff.4t">Price-match promise</div><div class="dd" data-i18n="diff.4d">See it cheaper? We'll match it</div></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS (real Google social proof) ===================== -->
+  <section class="section reviews-sec" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="rev.h">Loved by Orlando</h2>
+        <p data-i18n="rev.p">Here's what customers are saying.</p>
+      </div>
+      <div class="rev-summary">
+        <div class="rev-score">5.0</div>
+        <div class="rev-meta">
+          <span class="stars"><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span></span>
+          <div class="rev-count" data-i18n="rev.count">208 reviews on Google</div>
+        </div>
+      </div>
+      <div class="rev-grid">
+        <div class="rev-card">
+          <span class="stars"><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span></span>
+          <p>&ldquo;This shop is great!! It's super clean and has everything I needed!&rdquo;</p>
+          <div class="rev-src" data-i18n="rev.src">Google review</div>
+        </div>
+        <div class="rev-card">
+          <span class="stars"><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span><span data-icon="star"></span></span>
+          <p>&ldquo;Best smoke shop I visited on my trip! Great selection, clean store, and amazing customer service.&rdquo;</p>
+          <div class="rev-src" data-i18n="rev.src">Google review</div>
+        </div>
+      </div>
+      <div class="rev-cta">
+        <a href="https://www.google.com/maps/search/?api=1&query=Mile%20High%20Smoke%20Shop%207400%20Southland%20Blvd%20Orlando%20FL%2032809" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="rev.readall">Read all reviews on Google</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Mile%20High%20Smoke%20Shop%207400%20Southland%20Blvd%20Orlando%20FL%2032809" target="_blank" rel="noopener" class="btn btn-gold" data-i18n="rev.leave">Leave a review</a>
+      </div>
     </div>
   </section>
 
@@ -400,9 +439,9 @@
 
   <div class="toast" id="toast"><span class="ck" data-icon="check"></span><span id="toast-msg">Added to cart</span></div>
 
-  <script src="products.js"></script>
-  <script src="i18n.js"></script>
-  <script src="icons.js"></script>
-  <script src="app.js"></script>
+  <script src="products.js?v=3"></script>
+  <script src="i18n.js?v=3"></script>
+  <script src="icons.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

@@ -25,6 +25,11 @@ const I18N = {
     "hero.h1": "Orlando's smoke shop that comes <em>to you.</em>",
     "hero.sub": "Vapes, glass, hookah, CBD and more. Order online for same-day local delivery within 5 miles, in-store pickup, or nationwide shipping on eligible items.",
     "hero.cta1": "Start your order →", "hero.cta2": "How delivery works",
+    "proof.reviews": "208 reviews on Google",
+    "nav.reviews": "Reviews",
+    "rev.h": "Loved by Orlando", "rev.p": "Here's what customers are saying.",
+    "rev.count": "208 reviews on Google", "rev.src": "Google review",
+    "rev.readall": "Read all reviews on Google", "rev.leave": "Leave a review",
     "hero.stat1": "Products in stock", "hero.stat2": "Avg. delivery time", "hero.stat3": "Open every week",
 
     "zip.title": "Do we deliver to you?",
@@ -128,6 +133,11 @@ const I18N = {
     "hero.h1": "La smoke shop de Orlando que llega <em>hasta ti.</em>",
     "hero.sub": "Vapes, vidrio, hookah, CBD y más. Ordena en línea para entrega local el mismo día dentro de 5 millas, recoger en tienda, o envío a todo el país en productos elegibles.",
     "hero.cta1": "Empieza tu pedido →", "hero.cta2": "Cómo funciona la entrega",
+    "proof.reviews": "208 reseñas en Google",
+    "nav.reviews": "Reseñas",
+    "rev.h": "Los favoritos de Orlando", "rev.p": "Esto es lo que dicen los clientes.",
+    "rev.count": "208 reseñas en Google", "rev.src": "Reseña de Google",
+    "rev.readall": "Ver todas las reseñas en Google", "rev.leave": "Deja una reseña",
     "hero.stat1": "Productos en stock", "hero.stat2": "Tiempo de entrega prom.", "hero.stat3": "Abierto toda la semana",
 
     "zip.title": "¿Entregamos en tu zona?",
