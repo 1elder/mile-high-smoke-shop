@@ -643,3 +643,7 @@ input, textarea { caret-color: var(--gold); }
 .rev-src { color: var(--muted); font-size: 13px; margin-top: 16px; font-weight: 600; letter-spacing: .02em; }
 .rev-cta { display: flex; gap: 12px; justify-content: center; margin-top: 34px; flex-wrap: wrap; }
 @media (max-width: 720px) { .rev-grid { grid-template-columns: 1fr; } }
+
+/* ---- Sale category filter accent ---- */
+.cat-btn[data-cat="sale"] { color: var(--red); font-weight: 600; }
+.cat-btn[data-cat="sale"].active { color: var(--red); background: rgba(255,107,107,.10); border-color: rgba(255,107,107,.32); }

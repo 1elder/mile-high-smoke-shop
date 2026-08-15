@@ -21,7 +21,6 @@ const CATEGORIES = [
   { slug: "vapes",       name: "Vapes & E-Liquids",   name_es: "Vapes y E-Líquidos",     icon: "💨" },
   { slug: "glass",       name: "Glass & Water Pipes",  name_es: "Pipas de Vidrio y Agua", icon: "🌿" },
   { slug: "hookah",      name: "Hookah & Shisha",      name_es: "Hookah y Shisha",        icon: "🪔" },
-  { slug: "cbd",         name: "CBD & Delta",          name_es: "CBD y Delta",            icon: "🍃" },
   { slug: "kratom",      name: "Kratom & Botanicals",  name_es: "Kratom y Botánicos",     icon: "🌱" },
   { slug: "rolling",     name: "Rolling & Wraps",      name_es: "Papel y Envolturas",     icon: "📜" },
   { slug: "accessories", name: "Accessories",          name_es: "Accesorios",             icon: "⚙️" },
@@ -39,17 +38,12 @@ const PRODUCTS = [
   { id: 5,  name: "14\" Beaker Water Pipe",       category: "glass",  price: 79.99, brand: "HeavyGlass", desc: "5mm thick borosilicate beaker with ice catcher.", desc_es: "Pipa de agua de borosilicato de 5mm con atrapahielo.", tags: ["Best Seller"], stock: "in" },
   { id: 6,  name: "Mini Bubbler — Fumed",        category: "glass",  price: 29.99, brand: "HeavyGlass", desc: "Hand-blown color-changing fumed glass bubbler.", desc_es: "Bubbler de vidrio soplado a mano que cambia de color.", tags: [], stock: "in" },
   { id: 7,  name: "Silicone Unbreakable Rig",    category: "glass",  price: 24.99, brand: "FlexPipe",   desc: "Drop-proof silicone rig with glass bowl.", desc_es: "Rig de silicona a prueba de caídas con bowl de vidrio.", tags: ["Sale"], stock: "in" },
-  { id: 8,  name: "Spoon Pipe — Color Swirl",    category: "glass",  price: 12.99, brand: "HeavyGlass", desc: "Classic hand pipe, assorted swirl colors.", desc_es: "Pipa de mano clásica, colores surtidos.", tags: [], stock: "low" },
+  { id: 8,  name: "Spoon Pipe — Color Swirl",    category: "glass",  price: 12.99, brand: "HeavyGlass", desc: "Classic hand pipe, assorted swirl colors.", desc_es: "Pipa de mano clásica, colores surtidos.", tags: ["Sale"], stock: "low" },
 
   // ---------- HOOKAH ----------
   { id: 9,  name: "28\" 2-Hose Hookah Set",       category: "hookah", price: 64.99, brand: "Nile",      desc: "Full stainless setup with bowl, hoses, and tongs.", desc_es: "Set completo de acero inoxidable con bowl, mangueras y pinzas.", tags: [], stock: "in" },
   { id: 10, name: "Shisha 250g — Double Apple",  category: "hookah", price: 16.99, brand: "AlFakher",  desc: "Premium double apple molasses shisha.", desc_es: "Shisha premium sabor doble manzana.", tags: ["Best Seller"], stock: "in" },
   { id: 11, name: "Natural Coconut Coals",       category: "hookah", price: 11.99, brand: "CocoNara",   desc: "Long-burning natural coconut hookah coals, 1kg.", desc_es: "Carbones naturales de coco de larga duración, 1kg.", tags: [], stock: "in" },
-
-  // ---------- CBD & DELTA ----------
-  { id: 12, name: "CBD Tincture 1000mg",         category: "cbd",    price: 44.99, brand: "GreenPath", desc: "Full-spectrum hemp CBD oil, 30ml dropper.", desc_es: "Aceite de CBD de espectro completo, gotero de 30ml.", tags: [], stock: "in" },
-  { id: 13, name: "Delta-8 Gummies 25ct",        category: "cbd",    price: 27.99, brand: "GreenPath", desc: "Assorted fruit, 25mg per piece. Lab tested.", desc_es: "Frutas surtidas, 25mg cada una. Probado en laboratorio.", tags: ["New"], stock: "in" },
-  { id: 14, name: "CBD Relief Balm",             category: "cbd",    price: 22.99, brand: "GreenPath", desc: "Topical muscle & joint balm, 500mg.", desc_es: "Bálsamo tópico para músculos y articulaciones, 500mg.", tags: [], stock: "low" },
 
   // ---------- KRATOM ----------
   { id: 15, name: "Green Maeng Da Capsules",     category: "kratom", price: 24.99, brand: "BotaniLeaf", desc: "60 count, lab-tested green vein kratom.", desc_es: "60 cápsulas, kratom de vena verde probado en laboratorio.", tags: [], stock: "in" },
@@ -63,11 +57,11 @@ const PRODUCTS = [
   // ---------- ACCESSORIES ----------
   { id: 20, name: "4-Piece Metal Grinder",       category: "accessories", price: 18.99, brand: "GrindPro", desc: "Aircraft aluminum, kief catcher included.", desc_es: "Aluminio de grado aeronáutico, con recolector de kief.", tags: ["Best Seller"], stock: "in" },
   { id: 21, name: "Torch Lighter — Windproof",   category: "accessories", price: 13.99, brand: "BlazeCo",  desc: "Refillable single-jet butane torch.", desc_es: "Encendedor de butano recargable a prueba de viento.", tags: [], stock: "in" },
-  { id: 22, name: "Odor-Proof Storage Jar",      category: "accessories", price: 15.99, brand: "SealTight", desc: "UV-blocking airtight glass jar with lock lid.", desc_es: "Frasco de vidrio hermético con tapa de cierre y bloqueo UV.", tags: [], stock: "low" },
+  { id: 22, name: "Odor-Proof Storage Jar",      category: "accessories", price: 15.99, brand: "SealTight", desc: "UV-blocking airtight glass jar with lock lid.", desc_es: "Frasco de vidrio hermético con tapa de cierre y bloqueo UV.", tags: ["Sale"], stock: "low" },
   { id: 23, name: "Rolling Tray — Large",        category: "accessories", price: 10.99, brand: "GrindPro", desc: "Metal tray with magnetic lid, large size.", desc_es: "Bandeja de metal con tapa magnética, tamaño grande.", tags: [], stock: "in" },
 
   // ---------- DETOX ----------
-  { id: 24, name: "Same-Day Detox Drink",        category: "detox",  price: 29.99, brand: "CleanseNow", desc: "Fast-acting cleanse drink, tropical flavor.", desc_es: "Bebida desintoxicante de acción rápida, sabor tropical.", tags: [], stock: "in" },
+  { id: 24, name: "Same-Day Detox Drink",        category: "detox",  price: 29.99, brand: "CleanseNow", desc: "Fast-acting cleanse drink, tropical flavor.", desc_es: "Bebida desintoxicante de acción rápida, sabor tropical.", tags: ["Sale"], stock: "in" },
   { id: 25, name: "7-Day Detox Program",         category: "detox",  price: 49.99, brand: "CleanseNow", desc: "Complete week-long herbal cleanse kit.", desc_es: "Kit completo de limpieza herbal para una semana.", tags: ["New"], stock: "in" },
 ];
 
@@ -81,7 +75,7 @@ const PRODUCTS = [
    non-vape CBD, rolling supplies, etc.
    --------------------------------------------------------------------- */
 const NON_SHIP_CATEGORIES = ["vapes"];          // all vapes/e-liquids = ENDS, cannot ship
-const NON_SHIP_IDS = [10, 13];                  // shisha (tobacco), Delta-8 gummies (state-restricted)
+const NON_SHIP_IDS = [10];                       // shisha (tobacco)
 PRODUCTS.forEach(p => { p.ship = !(NON_SHIP_CATEGORIES.includes(p.category) || NON_SHIP_IDS.includes(p.id)); });
 
 /* Delivery zone: ZIP codes within the ~5-mile own-driver radius of the

@@ -37,9 +37,9 @@ function prodDesc(p) { return currentLang() === "es" && p.desc_es ? p.desc_es : 
 
 function renderCategories() {
   const list = $("#cat-list");
-  const all = [{ slug: "all", icon: "🛍️", _all: true }, ...CATEGORIES];
+  const all = [{ slug: "all", _all: true }, { slug: "sale", _sale: true }, ...CATEGORIES];
   list.innerHTML = all.map(c => `
-    <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">${c._all ? t("shop.all") : catName(c)}</button>`).join("");
+    <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">${c._all ? t("shop.all") : c._sale ? t("cat.sale") : catName(c)}</button>`).join("");
   $$(".cat-btn").forEach(btn => btn.addEventListener("click", () => {
     state.category = btn.dataset.cat; renderCategories(); renderProducts();
   }));
@@ -51,7 +51,9 @@ function renderCategories() {
 function filteredProducts() {
   const q = state.search.trim().toLowerCase();
   return PRODUCTS.filter(p => {
-    const catOk = state.category === "all" || p.category === state.category;
+    const catOk = state.category === "all" ? true
+      : state.category === "sale" ? (p.tags || []).includes("Sale")
+      : p.category === state.category;
     const hay = (p.name + " " + (p.brand || "") + " " + p.desc + " " + (p.desc_es || "")).toLowerCase();
     return catOk && (!q || hay.includes(q));
   });
