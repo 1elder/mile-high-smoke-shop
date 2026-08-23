@@ -8,7 +8,7 @@ const $  = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
 const money = (n) => "$" + n.toFixed(2);
 
-const state = { category: "all", search: "", cart: [], mode: "deliver", limit: 48 };
+const state = { category: "all", search: "", cart: [], mode: "deliver", limit: 48, shipFilter: "all" };
 
 /* Bilingual ticker phrases */
 const TICKER = {
@@ -54,8 +54,10 @@ function filteredProducts() {
     const catOk = state.category === "all" ? true
       : state.category === "sale" ? (p.tags || []).includes("Sale")
       : p.category === state.category;
-    const hay = (p.name + " " + (p.brand || "") + " " + p.desc + " " + (p.desc_es || "")).toLowerCase();
-    return catOk && (!q || hay.includes(q));
+    const shipOk = state.shipFilter === "ship" ? p.ship === true
+      : state.shipFilter === "local" ? p.ship === false : true;
+    const hay = (p.name + " " + (p.brand || "") + " " + (p.desc || "") + " " + (p.desc_es || "")).toLowerCase();
+    return catOk && shipOk && (!q || hay.includes(q));
   });
 }
 function badgeHTML(tags = []) {
@@ -164,11 +166,23 @@ function renderCart() {
   $("#points").textContent = Math.floor(sub);
   $("#total").textContent = money(sub + fee);
 
-  // Free-threshold nudge
-  const note = $("#deliver-note");
-  if (state.mode === "deliver" && sub > 0 && sub < 50) { note.textContent = t("cart.freenote", { amt: money(50 - sub) }); note.classList.add("show"); }
-  else if (state.mode === "ship" && sub > 0 && sub < 75) { note.textContent = t("cart.shipnote", { amt: money(75 - sub) }); note.classList.add("show"); }
-  else note.classList.remove("show");
+  // Free-threshold nudge + visual progress bar
+  const note = $("#deliver-note"), freebar = $("#freebar"), fill = $("#freebar-fill");
+  const threshold = state.mode === "ship" ? 75 : 50;
+  if (state.mode !== "pickup" && sub > 0) {
+    freebar.classList.add("show");
+    const pct = Math.min(100, (sub / threshold) * 100);
+    fill.style.width = pct + "%";
+    const done = sub >= threshold;
+    fill.classList.toggle("done", done);
+    note.classList.add("show");
+    note.classList.toggle("note-done", done);
+    if (done) note.textContent = t(state.mode === "ship" ? "cart.frees" : "cart.freed");
+    else note.textContent = t(state.mode === "ship" ? "cart.shipnote" : "cart.freenote", { amt: money(threshold - sub) });
+  } else {
+    freebar.classList.remove("show");
+    note.classList.remove("show", "note-done");
+  }
 
   // Non-shippable warning (PACT Act items in cart while shipping)
   const warn = $("#ship-warn");
@@ -210,6 +224,10 @@ $("#zip-input").addEventListener("keydown", e => { if (e.key === "Enter") checkZ
    SEARCH
    --------------------------------------------------------------------- */
 $("#search").addEventListener("input", e => { state.search = e.target.value; resetGrid(); });
+$$("#ship-filter button").forEach(b => b.addEventListener("click", () => {
+  $$("#ship-filter button").forEach(x => x.classList.remove("active"));
+  b.classList.add("active"); state.shipFilter = b.dataset.ship; resetGrid();
+}));
 
 /* ---------------------------------------------------------------------
    TOAST
@@ -345,6 +363,22 @@ $("#lang-toggle").addEventListener("click", () => switchLang(currentLang() === "
     requestAnimationFrame(frame);
   }
   init(); frame(); window.addEventListener("resize", resize);
+})();
+
+/* ---- Live tracker demo (auto-advances to feel live) ---- */
+(function tracker() {
+  const stages = $$(".trk-stage"), fill = $("#trk-fill");
+  if (!stages.length || !fill) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    stages.forEach(s => s.classList.add("done")); fill.style.width = "100%"; return;
+  }
+  let cur = 0;
+  const render = () => {
+    stages.forEach((s, i) => { s.classList.toggle("done", i < cur); s.classList.toggle("active", i === cur); });
+    fill.style.width = (cur / (stages.length - 1)) * 100 + "%";
+  };
+  render();
+  setInterval(() => { cur = (cur + 1) % stages.length; render(); }, 2600);
 })();
 
 /* ---- FAQ accordion ---- */

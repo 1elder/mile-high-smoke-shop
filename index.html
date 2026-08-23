@@ -85,16 +85,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/favicon.png?v=7" />
-  <link rel="apple-touch-icon" href="assets/logo.png?v=7" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=8" />
+  <link rel="apple-touch-icon" href="assets/logo.png?v=8" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
 
   <!-- ===================== AGE GATE ===================== -->
   <div id="age-gate">
     <div class="age-card">
-      <img src="assets/logo.png?v=7" class="age-logo-img" alt="Mile High Smoke Shop &amp; Convenience" />
+      <img src="assets/logo.png?v=8" class="age-logo-img" alt="Mile High Smoke Shop &amp; Convenience" />
       <div class="age-lang">
         <button class="al-btn" data-setlang="en">English</button>
         <button class="al-btn" data-setlang="es">Español</button>
@@ -116,7 +116,7 @@
   <!-- ===================== HEADER ===================== -->
   <header>
     <div class="wrap nav">
-      <a href="#top" class="brand"><img src="assets/logo.png?v=7" class="brand-logo" alt="Mile High Smoke Shop &amp; Convenience" /> MILE HIGH <span>&nbsp;Smoke Shop</span></a>
+      <a href="#top" class="brand"><img src="assets/logo.png?v=8" class="brand-logo" alt="Mile High Smoke Shop &amp; Convenience" /> MILE HIGH <span>&nbsp;Smoke Shop</span></a>
       <nav class="nav-links">
         <a href="#shop"     data-i18n="nav.shop">Shop</a>
         <a href="#delivery" data-i18n="nav.delivery">Delivery</a>
@@ -178,10 +178,10 @@
   <!-- ===================== DIFFERENTIATOR STRIP ===================== -->
   <section class="diff-strip reveal">
     <div class="wrap diff-grid">
-      <div class="diff"><span class="di" data-icon="zap"></span><div><div class="dt" data-i18n="diff.1t">Fastest in Orlando</div><div class="dd" data-i18n="diff.1d">Same-day, often under an hour</div></div></div>
-      <div class="diff"><span class="di" data-icon="star"></span><div><div class="dt" data-i18n="diff.2t">Mile High Club</div><div class="dd" data-i18n="diff.2d">Earn points on every order</div></div></div>
-      <div class="diff"><span class="di" data-icon="shield"></span><div><div class="dt" data-i18n="diff.3t">Lab-tested &amp; authentic</div><div class="dd" data-i18n="diff.3d">No fakes, ever</div></div></div>
-      <div class="diff"><span class="di" data-icon="tag"></span><div><div class="dt" data-i18n="diff.4t">Price-match promise</div><div class="dd" data-i18n="diff.4d">See it cheaper? We'll match it</div></div></div>
+      <div class="diff"><span class="di" data-icon="zap"></span><div><div class="dt" data-i18n="diff.1t">Same-day delivery</div><div class="dd" data-i18n="diff.1d">Local, often under an hour</div></div></div>
+      <div class="diff"><span class="di" data-icon="home"></span><div><div class="dt" data-i18n="diff.2t">Returns in-store</div><div class="dd" data-i18n="diff.2d">Anytime, no hassle</div></div></div>
+      <div class="diff"><span class="di" data-icon="star"></span><div><div class="dt" data-i18n="diff.3t">Mile High Club</div><div class="dd" data-i18n="diff.3d">Earn on every order</div></div></div>
+      <div class="diff"><span class="di" data-icon="award"></span><div><div class="dt" data-i18n="diff.4t">5.0 on Google</div><div class="dd" data-i18n="diff.4d">208 real reviews</div></div></div>
     </div>
   </section>
 
@@ -256,6 +256,34 @@
     </div>
   </section>
 
+  <!-- ===================== LIVE TRACKER DEMO ===================== -->
+  <section class="section tracker-sec" id="tracker">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="trk.h">Watch your order, every step</h2>
+        <p data-i18n="trk.p">Once it's out for delivery, you'll see exactly where it is, like tracking a pizza.</p>
+      </div>
+      <div class="tracker">
+        <div class="trk-stages">
+          <div class="trk-line"><div class="trk-line-fill" id="trk-fill"></div></div>
+          <div class="trk-stage"><span class="trk-dot"></span><div class="trk-lbl" data-i18n="trk.s1">Order confirmed</div></div>
+          <div class="trk-stage"><span class="trk-dot"></span><div class="trk-lbl" data-i18n="trk.s2">Packing your order</div></div>
+          <div class="trk-stage"><span class="trk-dot"></span><div class="trk-lbl" data-i18n="trk.s3">Out for delivery</div></div>
+          <div class="trk-stage"><span class="trk-dot"></span><div class="trk-lbl" data-i18n="trk.s4">Delivered</div></div>
+        </div>
+        <div class="trk-driver">
+          <div class="trk-driver-ic" data-icon="truck"></div>
+          <div class="trk-driver-meta">
+            <div class="trk-driver-name"><span data-i18n="trk.driver">Your driver</span>: Marco</div>
+            <div class="trk-eta"><span data-i18n="trk.eta">Arriving in</span> <strong>14 min</strong></div>
+          </div>
+          <span class="trk-badge" data-i18n="trk.live">LIVE</span>
+        </div>
+        <div class="trk-note" data-i18n="trk.note">Preview — this is how live tracking will look for local deliveries.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== SHOP ===================== -->
   <section class="section reveal" id="shop" style="background:var(--bg-2);">
     <div class="wrap">
@@ -272,6 +300,11 @@
         <div>
           <div class="shop-toolbar">
             <div class="search-box"><span class="ic" data-icon="search"></span><input type="text" id="search" data-i18n-ph="shop.search" placeholder="Search products…" /></div>
+            <div class="ship-filter" id="ship-filter">
+              <button data-ship="all" class="active" data-i18n="filter.all">All</button>
+              <button data-ship="ship" data-i18n="filter.ship">Ships nationwide</button>
+              <button data-ship="local" data-i18n="filter.local">Local / in-store</button>
+            </div>
             <div class="result-count" id="result-count"></div>
           </div>
           <div class="grid" id="product-grid"></div>
@@ -332,6 +365,18 @@
     </div>
   </section>
 
+  <!-- ===================== REST IN PIECE ===================== -->
+  <section class="section rip-sec" id="rip">
+    <div class="wrap">
+      <div class="rip-card">
+        <span class="rip-flag" data-i18n="rip.flag">Broke your glass?</span>
+        <h2 data-i18n="rip.h">Rest in Piece</h2>
+        <p data-i18n="rip.p">Send us a photo of your broken piece and we'll set you up with a discount on a replacement, delivered the same day. Good glass deserves a proper sendoff.</p>
+        <a href="sms:+16892338293" class="btn btn-gold" data-i18n="rip.cta">Text us a photo →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== STORE / VISIT ===================== -->
   <section class="section reveal" id="store">
     <div class="wrap store-layout">
@@ -353,12 +398,12 @@
     </div>
     <div class="wrap">
       <div class="store-photos">
-        <img src="assets/store1.jpg?v=7" alt="Glass selection inside Mile High Smoke Shop" loading="lazy" />
-        <img src="assets/store2.jpg?v=7" alt="Wall of vapes and disposables" loading="lazy" />
-        <img src="assets/store3.jpg?v=7" alt="Rolling papers and wraps aisle" loading="lazy" />
-        <img src="assets/store4.jpg?v=7" alt="Display counter" loading="lazy" />
-        <img src="assets/store5.jpg?v=7" alt="Incense and accessories" loading="lazy" />
-        <img src="assets/store6.jpg?v=7" alt="Shop shelves" loading="lazy" />
+        <img src="assets/store1.jpg?v=8" alt="Glass selection inside Mile High Smoke Shop" loading="lazy" />
+        <img src="assets/store2.jpg?v=8" alt="Wall of vapes and disposables" loading="lazy" />
+        <img src="assets/store3.jpg?v=8" alt="Rolling papers and wraps aisle" loading="lazy" />
+        <img src="assets/store4.jpg?v=8" alt="Display counter" loading="lazy" />
+        <img src="assets/store5.jpg?v=8" alt="Incense and accessories" loading="lazy" />
+        <img src="assets/store6.jpg?v=8" alt="Shop shelves" loading="lazy" />
       </div>
     </div>
   </section>
@@ -398,7 +443,7 @@
     <div class="wrap">
       <div class="foot-grid">
         <div class="foot-col foot-brand">
-          <img src="assets/logo.png?v=7" class="foot-logo" alt="Mile High Smoke Shop &amp; Convenience" />
+          <img src="assets/logo.png?v=8" class="foot-logo" alt="Mile High Smoke Shop &amp; Convenience" />
           <h5 style="font-size:18px;">MILE HIGH <span style="color:var(--gold)">Smoke Shop</span> &amp; Convenience</h5>
           <p data-i18n="foot.blurb">Orlando's premium smoke &amp; vape shop by the Florida Mall. Shop online, get it delivered same-day, or visit us in store.</p>
           <a href="https://www.instagram.com/milehighsmokeshop407_/" target="_blank" rel="noopener" class="ig-link"><span data-icon="instagram"></span> @milehighsmokeshop407_</a>
@@ -441,6 +486,7 @@
         <button data-mode="pickup"><span data-icon="home"></span> <span data-i18n="cart.pickup">Pickup</span></button>
       </div>
       <div class="ship-warn" id="ship-warn"></div>
+      <div class="freebar" id="freebar"><div class="freebar-fill" id="freebar-fill"></div></div>
       <div class="deliver-note" id="deliver-note"></div>
       <div class="summary-row"><span data-i18n="cart.subtotal">Subtotal</span><span id="sub">$0.00</span></div>
       <div class="summary-row"><span id="fee-label" data-i18n="cart.delivery">Delivery</span><span id="fee">$0.00</span></div>
@@ -452,9 +498,9 @@
 
   <div class="toast" id="toast"><span class="ck" data-icon="check"></span><span id="toast-msg">Added to cart</span></div>
 
-  <script src="products.js?v=7"></script>
-  <script src="i18n.js?v=7"></script>
-  <script src="icons.js?v=7"></script>
-  <script src="app.js?v=7"></script>
+  <script src="products.js?v=8"></script>
+  <script src="i18n.js?v=8"></script>
+  <script src="icons.js?v=8"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
