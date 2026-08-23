@@ -668,3 +668,8 @@ input, textarea { caret-color: var(--gold); }
 /* ---- Load more button ---- */
 .load-more { display: flex; margin: 32px auto 0; }
 .shop-layout .load-more { grid-column: 1 / -1; }
+
+/* ---- Real logo placements ---- */
+.brand-logo { width: 40px; height: 40px; border-radius: 50%; display: block; }
+.age-logo-img { width: 172px; height: 172px; display: block; margin: 0 auto 10px; }
+.foot-logo { width: 76px; height: 76px; display: block; margin-bottom: 14px; }
