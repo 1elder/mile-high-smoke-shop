@@ -673,3 +673,15 @@ input, textarea { caret-color: var(--gold); }
 .brand-logo { width: 40px; height: 40px; border-radius: 50%; display: block; }
 .age-logo-img { width: 172px; height: 172px; display: block; margin: 0 auto 10px; }
 .foot-logo { width: 76px; height: 76px; display: block; margin-bottom: 14px; }
+
+/* ---- Real shop photos ---- */
+.store-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+.store-photos img { width: 100%; height: 210px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--line); transition: transform .3s var(--ease); }
+.store-photos img:hover { transform: scale(1.02); }
+@media (max-width: 760px) { .store-photos { grid-template-columns: 1fr 1fr; } .store-photos img { height: 150px; } }
+
+/* ---- Hero backdrop = real shop photo, darkened for legibility ---- */
+.hero-visual {
+  background: linear-gradient(150deg, rgba(10,14,11,.70), rgba(10,14,11,.90)),
+              url("assets/hero-bg.jpg?v=7") center/cover no-repeat;
+}
