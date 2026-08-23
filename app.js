@@ -8,12 +8,12 @@ const $  = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
 const money = (n) => "$" + n.toFixed(2);
 
-const state = { category: "all", search: "", cart: [], mode: "deliver" };
+const state = { category: "all", search: "", cart: [], mode: "deliver", limit: 48 };
 
 /* Bilingual ticker phrases */
 const TICKER = {
-  en: ["Same-day local delivery within 5 miles", "Order online — we ship nationwide on eligible items", "Free local delivery over $50", "Join the Mile High Club — earn points on every order", "Text to order: (407) 286-1740"],
-  es: ["Entrega local el mismo día dentro de 5 millas", "Ordena en línea — enviamos a todo el país en productos elegibles", "Entrega local GRATIS en pedidos de más de $50", "Únete al Mile High Club — gana puntos en cada pedido", "Escribe para ordenar: (407) 286-1740"]
+  en: ["Same-day local delivery within 5 miles", "Order online — we ship nationwide on eligible items", "Free local delivery over $50", "Join the Mile High Club — earn points on every order", "Text to order: (689) 233-8293"],
+  es: ["Entrega local el mismo día dentro de 5 millas", "Ordena en línea — enviamos a todo el país en productos elegibles", "Entrega local GRATIS en pedidos de más de $50", "Únete al Mile High Club — gana puntos en cada pedido", "Escribe para ordenar: (689) 233-8293"]
 };
 
 /* ---------------------------------------------------------------------
@@ -33,7 +33,7 @@ const TICKER = {
    --------------------------------------------------------------------- */
 function catName(c) { return currentLang() === "es" && c.name_es ? c.name_es : c.name; }
 function catEmoji(slug) { const c = CATEGORIES.find(c => c.slug === slug); return c ? c.icon : "🛍️"; }
-function prodDesc(p) { return currentLang() === "es" && p.desc_es ? p.desc_es : p.desc; }
+function prodDesc(p) { return (currentLang() === "es" && p.desc_es ? p.desc_es : p.desc) || ""; }
 
 function renderCategories() {
   const list = $("#cat-list");
@@ -41,7 +41,7 @@ function renderCategories() {
   list.innerHTML = all.map(c => `
     <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">${c._all ? t("shop.all") : c._sale ? t("cat.sale") : catName(c)}</button>`).join("");
   $$(".cat-btn").forEach(btn => btn.addEventListener("click", () => {
-    state.category = btn.dataset.cat; renderCategories(); renderProducts();
+    state.category = btn.dataset.cat; renderCategories(); resetGrid();
   }));
 }
 
@@ -65,32 +65,48 @@ function badgeHTML(tags = []) {
 }
 function stockHTML(stock) { return `<span class="stock-dot ${stock}">${t("stock." + stock)}</span>`; }
 
+const PAGE_SIZE = 48;
 function renderProducts() {
   const items = filteredProducts();
   const grid = $("#product-grid");
   const key = items.length === 1 ? "shop.results_one" : "shop.results_other";
   $("#result-count").textContent = t(key, { n: items.length });
   if (!items.length) { grid.innerHTML = `<div class="empty" style="grid-column:1/-1;">${t("shop.empty")}</div>`; return; }
-  grid.innerHTML = items.map(p => `
+  const shown = items.slice(0, state.limit);
+  grid.innerHTML = shown.map(p => {
+    const stock = p.stock || "in";
+    const desc = prodDesc(p);
+    return `
     <div class="card">
       <div class="card-img">
         ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" style="height:100%;width:100%;object-fit:cover;">` : iconSVG("cloud", "ph-ico")}
         <div class="card-badges">${badgeHTML(p.tags)}</div>
-        ${stockHTML(p.stock)}
+        ${stockHTML(stock)}
       </div>
       <div class="card-body">
         ${p.brand ? `<div class="card-brand">${p.brand}</div>` : ""}
         <div class="card-name">${p.name}</div>
-        <div class="card-desc">${prodDesc(p)}</div>
+        ${desc ? `<div class="card-desc">${desc}</div>` : ""}
         <div class="ship-tag ${p.ship ? "yes" : "no"}">${iconSVG(p.ship ? "package" : "pin")} ${t(p.ship ? "ship.yes" : "ship.no")}</div>
         <div class="card-foot">
           <div class="card-price">${money(p.price)}</div>
-          <button class="add-btn" data-add="${p.id}" ${p.stock === "out" ? "disabled" : ""}>${p.stock === "out" ? t("btn.sold") : t("btn.add")}</button>
+          <button class="add-btn" data-add="${p.id}" ${stock === "out" ? "disabled" : ""}>${stock === "out" ? t("btn.sold") : t("btn.add")}</button>
         </div>
       </div>
-    </div>`).join("");
+    </div>`;
+  }).join("");
   $$("[data-add]").forEach(btn => btn.addEventListener("click", () => addToCart(+btn.dataset.add)));
+  const more = document.getElementById("load-more");
+  if (more) more.remove();
+  if (items.length > state.limit) {
+    const btn = document.createElement("button");
+    btn.id = "load-more"; btn.className = "btn btn-ghost load-more";
+    btn.textContent = t("shop.loadmore", { n: items.length - state.limit });
+    btn.addEventListener("click", () => { state.limit += PAGE_SIZE; renderProducts(); });
+    grid.parentElement.appendChild(btn);
+  }
 }
+function resetGrid() { state.limit = PAGE_SIZE; renderProducts(); }
 
 /* ---------------------------------------------------------------------
    CART
@@ -193,7 +209,7 @@ $("#zip-input").addEventListener("keydown", e => { if (e.key === "Enter") checkZ
 /* ---------------------------------------------------------------------
    SEARCH
    --------------------------------------------------------------------- */
-$("#search").addEventListener("input", e => { state.search = e.target.value; renderProducts(); });
+$("#search").addEventListener("input", e => { state.search = e.target.value; resetGrid(); });
 
 /* ---------------------------------------------------------------------
    TOAST

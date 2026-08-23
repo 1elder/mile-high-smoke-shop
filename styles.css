@@ -647,3 +647,24 @@ input, textarea { caret-color: var(--gold); }
 /* ---- Sale category filter accent ---- */
 .cat-btn[data-cat="sale"] { color: var(--red); font-weight: 600; }
 .cat-btn[data-cat="sale"].active { color: var(--red); background: rgba(255,107,107,.10); border-color: rgba(255,107,107,.32); }
+
+/* =====================================================================
+   BRAND MATCH — palette tuned to the Mile High logo
+   (warm green-black · cream-white · emerald green · gold)
+   ===================================================================== */
+:root {
+  --bg:        #0a0e0b;
+  --bg-2:      #0f140f;
+  --surface:   #161c16;
+  --surface-2: #1e261d;
+  --text:      #eff1ea;
+  --muted:     #9aa89c;
+  --gold:      #d8a94e;
+  --gold-2:    #f2d894;
+  --green:     #4fb477;
+  --green-dim: rgba(79,180,119,.15);
+}
+
+/* ---- Load more button ---- */
+.load-more { display: flex; margin: 32px auto 0; }
+.shop-layout .load-more { grid-column: 1 / -1; }
