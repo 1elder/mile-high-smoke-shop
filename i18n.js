@@ -21,7 +21,7 @@ const I18N = {
     "nav.shop": "Shop", "nav.delivery": "Delivery", "nav.rewards": "Rewards",
     "nav.store": "Visit Store", "nav.faq": "FAQ", "nav.cart": "Cart",
 
-    "hero.badge": "Now delivering same-day across Orlando",
+    "hero.badge": "Same-day local delivery · pickup · we ship nationwide",
     "hero.h1": "Orlando's smoke shop that comes <em>to you.</em>",
     "hero.sub": "Vapes, glass, hookah and more. Order online for same-day local delivery within 5 miles, in-store pickup, or nationwide shipping on eligible items.",
     "hero.cta1": "Start your order →", "hero.cta2": "How delivery works",
@@ -140,7 +140,7 @@ const I18N = {
     "nav.shop": "Tienda", "nav.delivery": "Entrega", "nav.rewards": "Recompensas",
     "nav.store": "Visítanos", "nav.faq": "Preguntas", "nav.cart": "Carrito",
 
-    "hero.badge": "Ahora con entrega el mismo día en todo Orlando",
+    "hero.badge": "Entrega local el mismo día · recoger · envío nacional",
     "hero.h1": "La smoke shop de Orlando que llega <em>hasta ti.</em>",
     "hero.sub": "Vapes, vidrio, hookah y más. Ordena en línea para entrega local el mismo día dentro de 5 millas, recoger en tienda, o envío a todo el país en productos elegibles.",
     "hero.cta1": "Empieza tu pedido →", "hero.cta2": "Cómo funciona la entrega",
