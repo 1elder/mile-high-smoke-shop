@@ -58,7 +58,7 @@ function filteredProducts() {
       : state.shipFilter === "local" ? p.ship === false : true;
     const hay = (p.name + " " + (p.brand || "") + " " + (p.desc || "") + " " + (p.desc_es || "")).toLowerCase();
     return catOk && shipOk && (!q || hay.includes(q));
-  });
+  }).sort((a, b) => (b.img ? 1 : 0) - (a.img ? 1 : 0));   // items with photos first
 }
 function badgeHTML(tags = []) {
   const map = { "New": "new", "Best Seller": "best", "Sale": "sale" };

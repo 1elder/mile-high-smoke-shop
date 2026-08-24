@@ -125,7 +125,7 @@ header {
     radial-gradient(70% 100% at 10% 10%, rgba(111,208,140,.12), transparent 55%),
     var(--bg);
 }
-.hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 84px 0 96px; }
+.hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 84px 24px 96px; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
   background: var(--green-dim); border: 1px solid rgba(111,208,140,.3); color: var(--green);
@@ -754,3 +754,26 @@ input, textarea { caret-color: var(--gold); }
 .club-card h3 { font-size: 17px; }
 .club-card p { font-size: 14px; }
 .rev-card { padding: 22px 24px; }
+
+/* =====================================================================
+   MOBILE POLISH — hero breathing room + legible stock badge
+   ===================================================================== */
+/* Stock badge: solid dark pill so the colored text is legible on any card */
+.stock-dot { background: rgba(8,11,9,.85); color: #cdd4cc; font-weight: 600; backdrop-filter: blur(2px); }
+.stock-dot.in  { color: #7fe0a0; }
+.stock-dot.low { color: var(--gold-2); }
+.stock-dot.out { color: #ff8f8f; }
+
+/* Hero: comfortable side margins + right-sized headline on phones */
+@media (max-width: 700px) {
+  .hero-inner { padding: 52px 22px 60px; gap: 30px; }
+  .hero h1 { font-size: 33px; }
+  .hero-sub { font-size: 16.5px; }
+}
+
+/* Mobile header: show logo only (wordmark is redundant with the logo + it crowds) */
+@media (max-width: 620px) {
+  .brand { font-size: 0; gap: 0; }
+  .brand .brand-logo { width: 40px; height: 40px; }
+  .nav-right { gap: 9px; }
+}
