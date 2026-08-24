@@ -724,6 +724,10 @@ input, textarea { caret-color: var(--gold); }
 .trk-badge { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .06em; display: inline-flex; align-items: center; gap: 6px; }
 .trk-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(79,180,119,.6); animation: pulse 2s infinite; }
 .trk-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 20px; }
+/* Demo/sample labeling so the tracker is never mistaken for a live order */
+.demo-tag { display: inline-block; vertical-align: middle; margin-left: 10px; font-size: 11px; font-weight: 800; letter-spacing: .12em; color: var(--gold-2); background: rgba(217,178,95,.14); border: 1px solid rgba(217,178,95,.35); padding: 3px 9px; border-radius: 999px; text-transform: uppercase; }
+.trk-badge.trk-badge-demo { color: var(--gold-2); }
+.trk-badge.trk-badge-demo::before { background: var(--gold-2); box-shadow: none; animation: none; }
 
 /* ---- Rest in Piece ---- */
 .rip-card { text-align: center; max-width: 680px; margin: 0 auto; padding: 46px 36px; border-radius: 22px;
