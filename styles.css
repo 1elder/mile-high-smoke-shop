@@ -420,7 +420,7 @@ footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 56
 /* ---- Store map ---- */
 .store-map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 360px; }
 .store-map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; filter: grayscale(.3) invert(.9) hue-rotate(180deg) contrast(.9); }
-.store-info a { color: var(--gold-2); }
+.store-info a:not(.btn) { color: var(--gold-2); }
 
 /* ---- FAQ ---- */
 .faq-item { border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; background: var(--surface); }
@@ -733,7 +733,7 @@ input, textarea { caret-color: var(--gold); }
 .rip-card p { color: var(--muted); font-size: 16px; margin: 0 auto 26px; max-width: 520px; }
 
 /* ---- Product photos on cards (clean white tile, full product shown) ---- */
-.card-img .pimg { width: 100%; height: 100%; object-fit: contain; background: #fff; padding: 12px; }
+.card-img .pimg { width: calc(100% - 24px); height: calc(100% - 24px); margin: 12px; object-fit: contain; background: #fff; padding: 10px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.28); }
 
 /* =====================================================================
    REFINEMENT — slimmer buttons & boxes (less bulky, more professional)
