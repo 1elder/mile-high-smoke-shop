@@ -777,3 +777,10 @@ input, textarea { caret-color: var(--gold); }
   .brand .brand-logo { width: 40px; height: 40px; }
   .nav-right { gap: 9px; }
 }
+
+/* More generous side margins on phones (site-wide + hero) */
+@media (max-width: 760px) {
+  .wrap { padding: 0 30px; }
+  .hero-inner { padding: 46px 30px 54px; }
+  .hero h1 { font-size: 32px; }
+}
