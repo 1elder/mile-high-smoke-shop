@@ -419,3 +419,8 @@ $("#year").textContent = new Date().getFullYear();
 renderCategories();
 renderProducts();
 updateCart();
+
+/* ---- Reveal safety net: never leave content hidden (IO edge cases / instant scrolls) ---- */
+window.addEventListener("load", () => {
+  setTimeout(() => { document.querySelectorAll(".reveal:not(.in)").forEach(e => e.classList.add("in")); }, 4000);
+});

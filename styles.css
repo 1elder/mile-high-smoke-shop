@@ -309,7 +309,7 @@ header {
   background: linear-gradient(160deg, var(--surface-2), var(--bg-2));
 }
 .store-tile.tall { grid-row: span 2; min-height: 314px; }
-.store-info h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+.store-info h2 { font-family: var(--serif); font-size: clamp(28px, 4.2vw, 42px); font-weight: 600; letter-spacing: -.01em; line-height: 1.08; }
 .store-info p { color: var(--muted); margin: 18px 0; font-size: 16px; }
 .info-list { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
 .info-row { display: flex; gap: 14px; align-items: flex-start; }
@@ -656,10 +656,10 @@ input, textarea { caret-color: var(--gold); }
 .cart-empty .empty-ico { width: 40px; height: 40px; color: var(--muted); opacity: .5; }
 .summary-row.points .ico { width: 15px; height: 15px; color: var(--gold-2); vertical-align: -0.15em; }
 
-/* ---- One focal moment: neutralize repeated per-section reveals ----
-   (impeccable + emil: content visible by default; the hero entrance is
-   the single authored moment. Motion lives in hover/press, smoke, timer.) */
-.reveal { opacity: 1; transform: none; }
+/* ---- Gentle cinematic reveals (Luxe & moody: slow, smooth on scroll) ---- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ---- Mobile menu (hamburger now opens a real menu) ---- */
 .mobile-menu {
@@ -796,7 +796,7 @@ input, textarea { caret-color: var(--gold); }
 .rip-card p { color: var(--muted); font-size: 16px; margin: 0 auto 26px; max-width: 520px; }
 
 /* ---- Product photos on cards (clean white tile, full product shown) ---- */
-.card-img .pimg { width: calc(100% - 24px); height: calc(100% - 24px); margin: 12px; object-fit: contain; background: #fff; padding: 10px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.28); }
+.card-img .pimg { width: calc(100% - 24px); height: calc(100% - 24px); margin: 12px; object-fit: contain; background: #f7f5f1; padding: 10px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.28), inset 0 0 0 1px rgba(201,162,74,.14); }
 
 /* =====================================================================
    REFINEMENT — slimmer buttons & boxes (less bulky, more professional)
