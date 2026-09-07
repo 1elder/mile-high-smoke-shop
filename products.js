@@ -6,14 +6,14 @@
    ===================================================================== */
 
 const CATEGORIES = [
-  { slug: "vapes", name: "Vapes & E-Liquids", name_es: "Vapes y E-L\u00edquidos", icon: "" },
-  { slug: "glass", name: "Glass & Pipes", name_es: "Vidrio y Pipas", icon: "" },
-  { slug: "rolling", name: "Rolling & Wraps", name_es: "Papel y Envolturas", icon: "" },
-  { slug: "hookah", name: "Hookah & Shisha", name_es: "Hookah y Shisha", icon: "" },
-  { slug: "kratom", name: "Kratom & Botanicals", name_es: "Kratom y Bot\u00e1nicos", icon: "" },
-  { slug: "detox", name: "Detox & Cleanse", name_es: "Detox y Limpieza", icon: "" },
-  { slug: "accessories", name: "Accessories", name_es: "Accesorios", icon: "" },
-  { slug: "convenience", name: "Convenience", name_es: "Conveniencia", icon: "" },
+  { slug: "vapes", name: "Vapes & E-Liquids", name_es: "Vapes y E-L\u00edquidos", icon: "", blurb: "Top brands, a huge range of flavors.", blurb_es: "Las mejores marcas, gran variedad de sabores." },
+  { slug: "glass", name: "Glass & Pipes", name_es: "Vidrio y Pipas", icon: "", blurb: "Hand pipes to heady collector glass.", blurb_es: "Desde pipas hasta vidrio de colecci\u00f3n." },
+  { slug: "rolling", name: "Rolling & Wraps", name_es: "Papel y Envolturas", icon: "", blurb: "Papers, wraps, cones and tips.", blurb_es: "Papel, blunts, conos y filtros." },
+  { slug: "hookah", name: "Hookah & Shisha", name_es: "Hookah y Shisha", icon: "", blurb: "Hookahs, bowls, coals and shisha.", blurb_es: "Hookahs, cazoletas, carb\u00f3n y shisha." },
+  { slug: "kratom", name: "Kratom & Botanicals", name_es: "Kratom y Bot\u00e1nicos", icon: "", blurb: "Botanicals and herbal blends.", blurb_es: "Bot\u00e1nicos y mezclas herbales." },
+  { slug: "detox", name: "Detox & Cleanse", name_es: "Detox y Limpieza", icon: "", blurb: "Reset, cleanse and refresh.", blurb_es: "Reinicia, limpia y refresca." },
+  { slug: "accessories", name: "Accessories", name_es: "Accesorios", icon: "", blurb: "Grinders, trays, torches and more.", blurb_es: "Grinders, bandejas, encendedores y m\u00e1s." },
+  { slug: "convenience", name: "Convenience", name_es: "Conveniencia", icon: "", blurb: "The everyday essentials.", blurb_es: "Lo esencial del d\u00eda a d\u00eda." },
 ];
 
 const PRODUCTS = [

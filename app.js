@@ -45,6 +45,25 @@ function renderCategories() {
   }));
 }
 
+/* Big visual category blocks (main-nav style, photo-ready) */
+function catBlurb(c) { return currentLang() === "es" && c.blurb_es ? c.blurb_es : c.blurb; }
+function renderCategoryBlocks() {
+  const box = $("#cat-blocks");
+  if (!box) return;
+  box.innerHTML = CATEGORIES.map((c, i) => `
+    <button class="cat-block g${i % 4}" data-cat="${c.slug}" aria-label="${catName(c)}">
+      <span class="cat-block-name">${catName(c)}</span>
+      <span class="cat-block-blurb">${catBlurb(c) || ""}</span>
+      <span class="cat-block-go">${t("shop.view")} <span aria-hidden="true">→</span></span>
+    </button>`).join("");
+  $$(".cat-block").forEach(b => b.addEventListener("click", () => {
+    state.category = b.dataset.cat;
+    renderCategories(); resetGrid();
+    const anchor = document.querySelector(".shop-toolbar") || $("#product-grid");
+    if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+}
+
 /* ---------------------------------------------------------------------
    PRODUCT GRID
    --------------------------------------------------------------------- */
@@ -280,6 +299,7 @@ function switchLang(lang) {
   applyStaticTranslations();
   buildTicker();
   renderCategories();
+  renderCategoryBlocks();
   renderProducts();
   renderCart();
   setStatsFinal();
@@ -417,6 +437,7 @@ hydrateIcons();
 buildTicker();
 $("#year").textContent = new Date().getFullYear();
 renderCategories();
+renderCategoryBlocks();
 renderProducts();
 updateCart();
 
@@ -424,3 +445,6 @@ updateCart();
 window.addEventListener("load", () => {
   setTimeout(() => { document.querySelectorAll(".reveal:not(.in)").forEach(e => e.classList.add("in")); }, 4000);
 });
+
+/* ---- Stories accordion ---- */
+$$(".story-q").forEach(q => q.addEventListener("click", () => q.closest(".story-item").classList.toggle("open")));
