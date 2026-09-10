@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mile High — Vista previa de tus piezas</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08080a;--surface:#0b0b0d;--text:#f4f1ea;--muted:#9a938a;--gold:#c9a24a;--gold2:#ecd28f;--green:#74d494;--hair:rgba(201,162,74,.30)}
+*{margin:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;padding:52px 22px 72px}
+.head{text-align:center;max-width:640px;margin:0 auto 44px}
+.head .ey{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.head .ey::before{content:"";display:block;width:36px;height:1px;margin:0 auto 16px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.head h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(28px,6vw,44px);margin-top:14px;letter-spacing:-.01em;line-height:1.08}
+.head p{color:var(--muted);margin-top:12px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto}
+.card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--hair);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.pimg{position:relative;background:#000;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
+.pimg img{width:100%;height:100%;object-fit:contain}
+.tag{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:rgba(201,162,74,.16);color:var(--gold2);border:1px solid var(--hair)}
+.ship{position:absolute;top:14px;right:14px;font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(8,11,9,.7);backdrop-filter:blur(4px)}
+.ship.nat{color:var(--green)} .ship.loc{color:var(--gold2)}
+.body{padding:20px 20px 22px}
+.brand{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.name{font-family:Fraunces,serif;font-weight:600;font-size:19px;line-height:1.2;margin:5px 0 12px}
+.price{font-size:20px;font-weight:700;color:var(--gold2);font-variant-numeric:tabular-nums}
+.price small{color:var(--muted);font-weight:500;font-size:13px;margin-left:4px}
+.foot{text-align:center;color:var(--muted);font-size:14px;margin-top:40px}
+@media(max-width:760px){.grid{grid-template-columns:1fr;max-width:400px}}
+</style></head>
+<body>
+  <div class="head">
+    <div class="ey">Vidrio & Colección</div>
+    <h1>Así se van a ver tus piezas</h1>
+    <p>Fondo negro, estilo galería — cada pieza como una obra. Vista previa con tus 3 fotos reales.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="pimg"><span class="tag">Pieza única</span><span class="ship nat">Envío nacional</span><img src="assets/preview/p1.jpg" alt="Rig reciclador de vidrio verde"></div>
+      <div class="body"><div class="brand">Vidrio artesanal</div><div class="name">Rig reciclador de vidrio · verde esmeralda</div><div class="price">$—<small>1 de 1</small></div></div>
+    </div>
+    <div class="card">
+      <div class="pimg"><span class="tag">Premium</span><span class="ship nat">Envío nacional</span><img src="assets/preview/p2.jpg" alt="Hookah mosaico plata y negro"></div>
+      <div class="body"><div class="brand">Hookah</div><div class="name">Hookah mosaico · plata & negro</div><div class="price">$—<small>en stock</small></div></div>
+    </div>
+    <div class="card">
+      <div class="pimg"><span class="ship loc">Solo local / tienda</span><img src="assets/preview/p3.jpg" alt="Adalya Lady Killer tabaco"></div>
+      <div class="body"><div class="brand">Adalya</div><div class="name">Adalya "Lady Killer" · tabaco premium</div><div class="price">$—<small>200g</small></div></div>
+    </div>
+  </div>
+  <p class="foot">Vista previa · Mile High Smoke Shop</p>
+</body></html>
