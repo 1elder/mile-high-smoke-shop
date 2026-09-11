@@ -110,8 +110,8 @@ function renderProducts() {
         ${desc ? `<div class="card-desc">${desc}</div>` : ""}
         <div class="ship-tag ${p.ship ? "yes" : "no"}">${iconSVG(p.ship ? "package" : "pin")} ${t(p.ship ? "ship.yes" : "ship.no")}</div>
         <div class="card-foot">
-          <div class="card-price">${money(p.price)}</div>
-          <button class="add-btn" data-add="${p.id}" ${stock === "out" ? "disabled" : ""}>${stock === "out" ? t("btn.sold") : t("btn.add")}</button>
+          <div class="card-price">${p.price == null ? t("price.ask") : money(p.price)}</div>
+          <button class="add-btn" data-add="${p.id}" ${stock === "out" || p.price == null ? "disabled" : ""}>${p.price == null ? t("btn.instore") : stock === "out" ? t("btn.sold") : t("btn.add")}</button>
         </div>
       </div>
     </div>`;

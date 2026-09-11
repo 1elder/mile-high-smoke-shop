@@ -64,7 +64,7 @@ const I18N = {
     "del.3tag": "IN STORE", "del.3h": "Pickup & browse", "del.3p": "Order ahead for pickup, or come explore the full selection on Southland Blvd by the Florida Mall.",
 
     "shop.eyebrow": "Shop", "shop.h": "Browse the store",
-    "shop.p": "Placeholder inventory shown here — the shop's real products drop straight in.",
+    "shop.p": "Handpicked glass, and more arriving every week. Ships nationwide, or same-day local delivery.",
     "shop.categories": "Categories", "shop.search": "Search products…",
     "shop.all": "All Products", "shop.view": "Shop",
     "stories.eyebrow": "Stories", "stories.h": "The culture behind the counter",
@@ -81,7 +81,7 @@ const I18N = {
     "shop.empty": "No products match your search.",
     "badge.new": "New", "badge.best": "Best Seller", "badge.sale": "Sale",
     "stock.in": "In stock", "stock.low": "Low stock", "stock.out": "Sold out",
-    "btn.add": "+ Add", "btn.sold": "Sold out",
+    "btn.add": "+ Add", "btn.sold": "Sold out", "btn.instore": "In store", "price.ask": "Ask in store",
 
     "club.eyebrow": "Rewards", "club.h": "Join the Mile High Club",
     "club.p": "The loyalty program that pays you back for shopping the way you already do.",
@@ -192,7 +192,7 @@ const I18N = {
     "del.3tag": "EN TIENDA", "del.3h": "Recoge y explora", "del.3p": "Ordena con anticipación para recoger, o ven a explorar toda la selección en Southland Blvd, junto al Florida Mall.",
 
     "shop.eyebrow": "Tienda", "shop.h": "Explora la tienda",
-    "shop.p": "Aquí se muestra inventario de ejemplo — los productos reales de la tienda entran directo aquí.",
+    "shop.p": "Vidrio seleccionado a mano, y más llegando cada semana. Envío a todo el país, o entrega local el mismo día.",
     "shop.categories": "Categorías", "shop.search": "Buscar productos…",
     "shop.all": "Todos los Productos", "shop.view": "Ver",
     "stories.eyebrow": "Historias", "stories.h": "La cultura detrás del mostrador",
@@ -209,7 +209,7 @@ const I18N = {
     "shop.empty": "Ningún producto coincide con tu búsqueda.",
     "badge.new": "Nuevo", "badge.best": "Más Vendido", "badge.sale": "Oferta",
     "stock.in": "Disponible", "stock.low": "Pocas unidades", "stock.out": "Agotado",
-    "btn.add": "+ Agregar", "btn.sold": "Agotado",
+    "btn.add": "+ Agregar", "btn.sold": "Agotado", "btn.instore": "En tienda", "price.ask": "Consultar",
 
     "club.eyebrow": "Recompensas", "club.h": "Únete al Mile High Club",
     "club.p": "El programa de lealtad que te recompensa por comprar como ya lo haces.",
