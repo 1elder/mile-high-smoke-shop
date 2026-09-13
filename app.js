@@ -100,7 +100,7 @@ function renderProducts() {
     return `
     <div class="card">
       <div class="card-img">
-        ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" class="pimg" loading="lazy">` : iconSVG("cloud", "ph-ico")}
+        ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" class="pimg ${p.img.startsWith("products/") ? "on-dark" : "on-light"}" loading="lazy">` : iconSVG("cloud", "ph-ico")}
         <div class="card-badges">${badgeHTML(p.tags)}</div>
         ${stockHTML(stock)}
       </div>
