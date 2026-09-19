@@ -122,6 +122,8 @@ const PRODUCTS = [
   {id:103, name:"Fish Hand Pipe", name_es:"Pipa de Mano Pez", category:"glass", price:14.99, ship:true, img:"products/p26.jpg"},
   {id:104, name:"Ooze Cryo Freezable Pipe — Amber", name_es:"Ooze Cryo Pipa Congelable — Ámbar", category:"glass", price:29.99, ship:true, img:"products/p27.jpg", brand:"Ooze"},
   {id:105, name:"Ooze Cryo Freezable Pipe — Green", name_es:"Ooze Cryo Pipa Congelable — Verde", category:"glass", price:29.99, ship:true, img:"products/p28.jpg", brand:"Ooze"},
+  {id:106, name:"Mosaic Hookah", name_es:"Hookah Mosaico", category:"hookah", price:null, ship:true, img:"products/hk1.jpg"},
+  {id:107, name:"Adalya Lady Killer Premium Hookah Tobacco (200g)", name_es:"Adalya Lady Killer Tabaco Premium para Hookah (200g)", category:"hookah", price:null, ship:false, img:"products/hk2.jpg", brand:"Adalya", desc:"200g", desc_es:"200g"},
   {id:2001, name:"Glass Oil Burner - 4\" Regular Wall Clear 20 ct", category:"glass", price:4.99, ship:true},
   {id:2002, name:"Glass Oil Burner - 6\" Regular Wall Clear", category:"glass", price:6.99, ship:true},
   {id:2003, name:"Glass Oil Burner - 4\" Heavy Wall - Clear", category:"glass", price:7.99, ship:true},
