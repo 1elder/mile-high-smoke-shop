@@ -211,7 +211,7 @@ const PRODUCTS = [
   {id:192, name:"OLIT Hookalit — Love 66", name_es:"OLIT Hookalit — Love 66", category:"hookah", price:29.99, ship:false, img:"products/d85.jpg", brand:"OLIT", desc:"40K puffs", desc_es:"40K caladas"},
   {id:193, name:"OLIT Hookalit — Blue Razz", name_es:"OLIT Hookalit — Frambuesa Azul", category:"hookah", price:29.99, ship:false, img:"products/d86.jpg", brand:"OLIT", desc:"40K puffs", desc_es:"40K caladas"},
   {id:194, name:"Big Cloud Crown Bar (Al Fakher) — Mint", name_es:"Big Cloud Crown Bar (Al Fakher) — Menta", category:"hookah", price:29.99, ship:false, img:"products/d87.jpg", brand:"Big Cloud", desc:"Dual mode · Al Fakher", desc_es:"Modo dual · Al Fakher"},
-  {id:195, name:"Big Cloud Crown Bar (Al Fakher) — Fusion", name_es:"Big Cloud Crown Bar (Al Fakher) — Fusión", category:"hookah", price:29.99, ship:false, img:"products/d88.jpg", brand:"Big Cloud", desc:"Dual mode · Al Fakher", desc_es:"Modo dual · Al Fakher"},
+  {id:195, name:"Big Cloud Crown Bar (Al Fakher) — Fusion Top", name_es:"Big Cloud Crown Bar (Al Fakher) — Fusión Top", category:"hookah", price:29.99, ship:false, img:"products/d88.jpg", brand:"Big Cloud", desc:"Dual mode · Al Fakher", desc_es:"Modo dual · Al Fakher"},
   {id:2001, name:"Glass Oil Burner - 4\" Regular Wall Clear 20 ct", category:"glass", price:4.99, ship:true},
   {id:2002, name:"Glass Oil Burner - 6\" Regular Wall Clear", category:"glass", price:6.99, ship:true},
   {id:2003, name:"Glass Oil Burner - 4\" Heavy Wall - Clear", category:"glass", price:7.99, ship:true},
