@@ -885,3 +885,15 @@ input, textarea { caret-color: var(--gold); }
 .story-a { max-height: 0; overflow: hidden; color: var(--muted); font-size: 15.5px; line-height: 1.72; padding: 0 26px; transition: max-height .45s var(--ease), padding .45s var(--ease); }
 .story-item.open .story-a { max-height: 420px; padding: 0 26px 24px; }
 @media (max-width: 520px) { .story-q { padding: 18px 20px; } .story-title { font-size: 18px; } .story-a { padding: 0 20px; } .story-item.open .story-a { padding: 0 20px 20px; } }
+
+/* ===================== BUILD / LAUNCH BANNER ===================== */
+#build-banner{
+  display:flex; align-items:center; justify-content:center; gap:.55rem;
+  background:linear-gradient(90deg,#b8912f 0%,#e3c169 50%,#b8912f 100%);
+  color:#1a1406; font-family:var(--font);
+  font-weight:800; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase;
+  padding:.5rem 1rem; text-align:center; line-height:1.35;
+  border-bottom:1px solid rgba(0,0,0,.28); position:relative; z-index:6;
+}
+#build-banner .bb-ico{ font-size:1rem; letter-spacing:0; }
+@media(max-width:560px){ #build-banner{ font-size:.63rem; letter-spacing:.09em; padding:.45rem .7rem; } }

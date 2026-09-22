@@ -13,6 +13,7 @@
 const I18N = {
   en: {
     "age.q": "Are you 21 or older?",
+    "build.banner": "Site under construction · Official launch coming soon",
     "age.p": "You must be of legal age to enter this site. Products are intended for adults only.",
     "age.yes": "Yes, I'm 21+", "age.no": "No",
     "age.deny": "Sorry — you must be 21 or older to enter.",
@@ -141,6 +142,7 @@ const I18N = {
 
   es: {
     "age.q": "¿Tienes 21 años o más?",
+    "build.banner": "Sitio en construcción · Próxima apertura oficial",
     "age.p": "Debes ser mayor de edad para entrar a este sitio. Los productos son solo para adultos.",
     "age.yes": "Sí, tengo 21+", "age.no": "No",
     "age.deny": "Lo sentimos — debes tener 21 años o más para entrar.",
