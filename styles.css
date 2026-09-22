@@ -508,9 +508,9 @@ footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 56
 .summary-row.points { color: var(--gold-2); }
 
 /* ---- Sticky mobile order bar ---- */
-.mobile-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; display: none; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(11,13,16,.95); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
-.mobile-bar a { flex: 1; text-align: center; padding: 14px; border-radius: 999px; font-weight: 700; font-size: 15px; }
-.mb-call { background: var(--surface-2); border: 1px solid var(--line); flex: 0 0 96px !important; }
+.mobile-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; display: none; gap: 10px; padding: 8px 14px calc(8px + env(safe-area-inset-bottom)); background: rgba(11,13,16,.95); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+.mobile-bar a { flex: 1; text-align: center; padding: 10px 12px; border-radius: 999px; font-weight: 700; font-size: 13.5px; white-space: nowrap; line-height: 1.15; }
+.mb-call { background: var(--surface-2); border: 1px solid var(--line); flex: 0 0 84px !important; }
 .mb-order { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #201a0c; }
 
 /* ---- Newsletter slide-in ---- */
