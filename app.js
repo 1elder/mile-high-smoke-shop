@@ -33,12 +33,13 @@ const TICKER = {
    --------------------------------------------------------------------- */
 function catName(c) { return currentLang() === "es" && c.name_es ? c.name_es : c.name; }
 function catEmoji(slug) { const c = CATEGORIES.find(c => c.slug === slug); return c ? c.icon : "🛍️"; }
+function activeCategories() { return CATEGORIES.filter(c => PRODUCTS.some(p => p.category === c.slug)); }
 function prodDesc(p) { return (currentLang() === "es" && p.desc_es ? p.desc_es : p.desc) || ""; }
 function prodName(p) { return currentLang() === "es" && p.name_es ? p.name_es : p.name; }
 
 function renderCategories() {
   const list = $("#cat-list");
-  const all = [{ slug: "all", _all: true }, { slug: "sale", _sale: true }, ...CATEGORIES];
+  const all = [{ slug: "all", _all: true }, { slug: "sale", _sale: true }, ...activeCategories()];
   list.innerHTML = all.map(c => `
     <button class="cat-btn ${c.slug === state.category ? "active" : ""}" data-cat="${c.slug}">${c._all ? t("shop.all") : c._sale ? t("cat.sale") : catName(c)}</button>`).join("");
   $$(".cat-btn").forEach(btn => btn.addEventListener("click", () => {
@@ -51,7 +52,7 @@ function catBlurb(c) { return currentLang() === "es" && c.blurb_es ? c.blurb_es 
 function renderCategoryBlocks() {
   const box = $("#cat-blocks");
   if (!box) return;
-  box.innerHTML = CATEGORIES.map((c, i) => `
+  box.innerHTML = activeCategories().map((c, i) => `
     <button class="cat-block g${i % 4}" data-cat="${c.slug}" aria-label="${catName(c)}">
       <span class="cat-block-name">${catName(c)}</span>
       <span class="cat-block-blurb">${catBlurb(c) || ""}</span>
