@@ -34,6 +34,7 @@ const TICKER = {
 function catName(c) { return currentLang() === "es" && c.name_es ? c.name_es : c.name; }
 function catEmoji(slug) { const c = CATEGORIES.find(c => c.slug === slug); return c ? c.icon : "🛍️"; }
 function prodDesc(p) { return (currentLang() === "es" && p.desc_es ? p.desc_es : p.desc) || ""; }
+function prodName(p) { return currentLang() === "es" && p.name_es ? p.name_es : p.name; }
 
 function renderCategories() {
   const list = $("#cat-list");
@@ -98,7 +99,7 @@ function renderProducts() {
     const stock = p.stock || "in";
     const desc = prodDesc(p);
     return `
-    <div class="card">
+    <div class="card" data-id="${p.id}">
       <div class="card-img">
         ${p.img ? `<img src="assets/${p.img}" alt="${p.name}" class="pimg ${p.img.startsWith("products/") ? "on-dark" : "on-light"}" loading="lazy">` : iconSVG("cloud", "ph-ico")}
         <div class="card-badges">${badgeHTML(p.tags)}</div>
@@ -106,7 +107,7 @@ function renderProducts() {
       </div>
       <div class="card-body">
         ${p.brand ? `<div class="card-brand">${p.brand}</div>` : ""}
-        <div class="card-name">${p.name}</div>
+        <div class="card-name">${prodName(p)}</div>
         ${desc ? `<div class="card-desc">${desc}</div>` : ""}
         <div class="ship-tag ${p.ship ? "yes" : "no"}">${iconSVG(p.ship ? "package" : "pin")} ${t(p.ship ? "ship.yes" : "ship.no")}</div>
         <div class="card-foot">
@@ -116,7 +117,8 @@ function renderProducts() {
       </div>
     </div>`;
   }).join("");
-  $$("[data-add]").forEach(btn => btn.addEventListener("click", () => addToCart(+btn.dataset.add)));
+  $$("[data-add]").forEach(btn => btn.addEventListener("click", (e) => { e.stopPropagation(); addToCart(+btn.dataset.add); }));
+  $$("#product-grid .card").forEach(c => c.addEventListener("click", () => openProduct(+c.dataset.id)));
   const more = document.getElementById("load-more");
   if (more) more.remove();
   if (items.length > state.limit) {
@@ -128,6 +130,31 @@ function renderProducts() {
   }
 }
 function resetGrid() { state.limit = PAGE_SIZE; renderProducts(); }
+
+/* ---------------------------------------------------------------------
+   PRODUCT QUICK-VIEW MODAL
+   --------------------------------------------------------------------- */
+function openProduct(id) {
+  const p = PRODUCTS.find(x => x.id === id); if (!p) return;
+  const img = $("#pm-img");
+  if (p.img) { img.src = "assets/" + p.img; img.alt = prodName(p); img.style.display = ""; }
+  else { img.removeAttribute("src"); img.style.display = "none"; }
+  const brand = $("#pm-brand"); brand.textContent = p.brand || ""; brand.style.display = p.brand ? "" : "none";
+  $("#pm-name").textContent = prodName(p);
+  const d = prodDesc(p), descEl = $("#pm-desc"); descEl.textContent = d; descEl.style.display = d ? "" : "none";
+  $("#pm-ship").innerHTML = iconSVG(p.ship ? "package" : "pin") + " " + t(p.ship ? "ship.yes" : "ship.no");
+  $("#pm-price").textContent = p.price == null ? t("price.ask") : money(p.price);
+  const stock = p.stock || "in", disabled = stock === "out" || p.price == null, add = $("#pm-add");
+  add.disabled = disabled;
+  add.textContent = p.price == null ? t("btn.instore") : stock === "out" ? t("btn.sold") : t("btn.add");
+  add.onclick = () => { if (!disabled) { addToCart(p.id); closeProduct(); } };
+  $("#pm-backdrop").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeProduct() { $("#pm-backdrop").classList.remove("open"); document.body.style.overflow = ""; }
+$("#pm-close").addEventListener("click", closeProduct);
+$("#pm-backdrop").addEventListener("click", e => { if (e.target.id === "pm-backdrop") closeProduct(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeProduct(); });
 
 /* ---------------------------------------------------------------------
    CART
