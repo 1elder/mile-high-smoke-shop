@@ -12,9 +12,19 @@ Inventory lives in **`products.js`** — that is the file to swap when the owner
 
 ## Status
 
-Waiting on the owner for **inventory, address and branding**. The current products are a skeleton so the layout can be
-judged. Do not invent products, brands, prices or stock levels to make it look finished, and don't present placeholder
-inventory to the client as though it were real.
+**Real inventory is loaded** (as of Oct 2026): real products with photos and prices across glass, vapes, hookah,
+rolling, and cigars. The old generic placeholders were removed; empty categories auto-hide (see `activeCategories()`
+in app.js). The owner keeps sending stock in batches over several days; a few items sit at "ask in store" until she
+provides a price.
+
+Never invent products, brands, prices or stock. New inventory arrives as photos from the owner.
+
+Build notes: optimize images into `assets/products/`, insert entries before the `];` that closes `const PRODUCTS`,
+re-run the product-schema generator, and bump the `?v=N` cache-buster in index.html after any products.js change.
+Use `/usr/bin/python3` (it has Pillow).
+
+Operational details (owner contact, the WhatsApp retrieval pipeline, GBP checklist, launch/payment roadmap) live in
+the private memory note, not here — this file is in a public repo.
 
 ## Rules
 
