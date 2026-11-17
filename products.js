@@ -15,6 +15,7 @@ const CATEGORIES = [
   { slug: "accessories", name: "Accessories", name_es: "Accesorios", icon: "", blurb: "Grinders, trays, torches and more.", blurb_es: "Grinders, bandejas, encendedores y m\u00e1s." },
   { slug: "convenience", name: "Convenience", name_es: "Conveniencia", icon: "", blurb: "The everyday essentials.", blurb_es: "Lo esencial del d\u00eda a d\u00eda." },
   { slug: "adult", name: "Adult", name_es: "Para Adultos", icon: "", blurb: "Adults only. Discreet.", blurb_es: "Solo adultos. Discreto." },
+  { slug: "wellness", name: "Wellness", name_es: "Bienestar", icon: "", blurb: "Hemp body care, lotions and self-care.", blurb_es: "Cuidado corporal con hemp, lociones y bienestar." },
 ];
 
 const PRODUCTS = [
@@ -416,6 +417,8 @@ const PRODUCTS = [
   {id:396, name:"Swisher Sweets Leaf — Original", name_es:"Swisher Sweets Leaf — Original", category:"cigars", price:2.49, ship:false, img:"products/cg73.jpg", brand:"Swisher Sweets", desc:"3 cigars", desc_es:"3 cigarros"},
   {id:397, name:"Blunt Ville — Blue", name_es:"Blunt Ville — Blue", category:"cigars", price:1.29, ship:false, img:"products/cg74.jpg", brand:"Blunt Ville", desc:"3 cigarillos", desc_es:"3 cigarrillos"},
   {id:398, name:"Blunt Ville — Pink Diva", name_es:"Blunt Ville — Pink Diva", category:"cigars", price:1.29, ship:false, img:"products/cg75.jpg", brand:"Blunt Ville", desc:"3 cigarillos", desc_es:"3 cigarrillos"},
+  {id:399, name:"Hempz Brazilian Berry — Herbal Body Moisturizer", name_es:"Hempz Brazilian Berry — Humectante Corporal", category:"wellness", price:null, ship:true, img:"products/w1.jpg", brand:"Hempz", desc:"17 fl oz · hemp seed oil, peptides & amino acids", desc_es:"17 oz · aceite de semilla de hemp, péptidos y aminoácidos"},
+  {id:400, name:"Hempz Pomegranate — Herbal Hand Cream", name_es:"Hempz Pomegranate — Crema de Manos", category:"wellness", price:null, ship:true, img:"products/w2.jpg", brand:"Hempz", desc:"3 fl oz · intense hydration, hemp seed oil & shea butter", desc_es:"3 oz · hidratación intensa, aceite de hemp y manteca de karité"},
 ];
 
 /* ~5-mile own-driver delivery zone ZIPs (placeholder — confirm with owner). */
