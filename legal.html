@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Policies — Mile High Smoke Shop &amp; Convenience</title>
+<meta name="description" content="Terms of Use, Privacy Policy, Age Policy, and Shipping & Delivery Policy for Mile High Smoke Shop & Convenience, Orlando FL." />
+<meta name="robots" content="index,follow" />
+<link rel="icon" href="assets/favicon.png?v=45" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=45" />
+<style>
+  /* ---- Legal page: inherits palette tokens from styles.css ---- */
+  .lp-wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 100px; }
+  .lp-top {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(9,9,11,.82); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line); margin: 0 -20px 0;
+    padding: 14px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .lp-top .lp-home { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 600; }
+  .lp-top .lp-home img { height: 34px; width: auto; display: block; }
+  .lp-top .lp-home span { font-family: var(--display); font-size: 15px; letter-spacing: .2px; }
+  .lp-top .lp-home span b { color: var(--gold); font-weight: 600; }
+  .lp-spacer { flex: 1 1 auto; }
+  .lp-lang {
+    border: 1px solid var(--line-2); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 8px 15px; font: 600 13px/1 var(--font); cursor: pointer;
+    letter-spacing: .3px; transition: border-color .2s var(--ease);
+  }
+  .lp-lang:hover { border-color: var(--hair-gold); }
+
+  .lp-hero { padding: 48px 0 10px; }
+  .lp-hero .eyebrow { color: var(--gold); font: 600 12.5px/1 var(--font); letter-spacing: 2.4px; text-transform: uppercase; }
+  .lp-hero h1 { font-family: var(--display); font-size: clamp(30px, 6vw, 46px); line-height: 1.05; margin: 14px 0 10px; }
+  .lp-hero .updated { color: var(--muted); font-size: 14px; }
+
+  .lp-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 26px 0 8px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+  .lp-tab {
+    border: 1px solid var(--line-2); background: transparent; color: var(--muted);
+    border-radius: 999px; padding: 9px 16px; font: 600 13.5px/1 var(--font); cursor: pointer;
+    transition: all .2s var(--ease); white-space: nowrap;
+  }
+  .lp-tab:hover { color: var(--text); border-color: var(--hair-gold); }
+  .lp-tab.active { background: var(--gold-soft); border-color: var(--hair-gold); color: var(--gold-2); }
+
+  .lp-panel { display: none; animation: lpfade .35s var(--ease); }
+  .lp-panel.active { display: block; }
+  @keyframes lpfade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .lp-panel h2 { font-family: var(--display); font-size: 25px; margin: 30px 0 6px; }
+  .lp-panel h3 { font-size: 17px; margin: 26px 0 6px; color: var(--text); }
+  .lp-panel p, .lp-panel li { color: var(--muted); font-size: 15.5px; line-height: 1.72; }
+  .lp-panel p { margin: 10px 0; }
+  .lp-panel ul { margin: 10px 0 10px; padding-left: 22px; }
+  .lp-panel li { margin: 6px 0; }
+  .lp-panel strong { color: var(--text); font-weight: 600; }
+  .lp-panel a { color: var(--gold-2); }
+  .lp-note {
+    border: 1px solid var(--hair-gold); background: var(--gold-soft); border-radius: var(--radius-sm);
+    padding: 16px 18px; margin: 20px 0; color: var(--text); font-size: 15px; line-height: 1.65;
+  }
+  .lp-note strong { color: var(--gold-2); }
+  [data-lang-block] { display: none; }
+  html[data-lp-lang="en"] [data-lang-block="en"] { display: block; }
+  html[data-lp-lang="es"] [data-lang-block="es"] { display: block; }
+  .lp-foot { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 22px; color: var(--faint); font-size: 13.5px; }
+  .lp-foot a { color: var(--muted); text-decoration: none; }
+  .lp-foot a:hover { color: var(--gold-2); }
+</style>
+</head>
+<body>
+  <div class="lp-wrap">
+    <div class="lp-top">
+      <a class="lp-home" href="index.html">
+        <img src="assets/logo.png?v=45" alt="Mile High Smoke Shop & Convenience" />
+        <span data-lang-block="en">MILE HIGH <b>Smoke Shop</b></span>
+        <span data-lang-block="es">MILE HIGH <b>Smoke Shop</b></span>
+      </a>
+      <div class="lp-spacer"></div>
+      <button class="lp-lang" id="lpLang" type="button">ES</button>
+    </div>
+
+    <header class="lp-hero">
+      <div data-lang-block="en">
+        <div class="eyebrow">Mile High Smoke Shop &amp; Convenience</div>
+        <h1>Store Policies</h1>
+        <div class="updated">Last updated: November 16, 2026</div>
+      </div>
+      <div data-lang-block="es">
+        <div class="eyebrow">Mile High Smoke Shop &amp; Convenience</div>
+        <h1>Políticas de la Tienda</h1>
+        <div class="updated">Última actualización: 16 de noviembre de 2026</div>
+      </div>
+    </header>
+
+    <nav class="lp-tabs" id="lpTabs">
+      <button class="lp-tab active" data-tab="terms"><span data-lang-block="en">Terms of Use</span><span data-lang-block="es">Términos de Uso</span></button>
+      <button class="lp-tab" data-tab="privacy"><span data-lang-block="en">Privacy Policy</span><span data-lang-block="es">Privacidad</span></button>
+      <button class="lp-tab" data-tab="age"><span data-lang-block="en">Age Policy (21+)</span><span data-lang-block="es">Política de Edad (21+)</span></button>
+      <button class="lp-tab" data-tab="shipping"><span data-lang-block="en">Orders, Delivery &amp; Shipping</span><span data-lang-block="es">Pedidos, Entrega y Envíos</span></button>
+    </nav>
+
+    <!-- ========================= TERMS ========================= -->
+    <section class="lp-panel active" id="panel-terms">
+      <div data-lang-block="en">
+        <h2>Terms of Use</h2>
+        <p>Welcome to Mile High Smoke Shop &amp; Convenience ("Mile High," "we," "us," or "our"). These Terms of Use govern your use of this website and the information, catalog, and ordering options we provide through it. By using this site, you agree to these terms. If you do not agree, please do not use the site.</p>
+
+        <h3>1. You must be 21 or older</h3>
+        <p>This site and everything on it is intended only for adults who are at least 21 years of age. By entering the site, placing an order, or buying from us, you confirm that you are 21 or older. See our <a href="#" data-goto="age">Age Policy</a> for details.</p>
+
+        <h3>2. This site is an online catalog</h3>
+        <p>The products, prices, descriptions, and availability shown here are provided for your convenience and may change at any time without notice. Showing a product on this site is not a guarantee that it is in stock. At this time, orders are not completed or paid for on this website. To buy, you contact the store directly and we confirm availability, price, and pickup or delivery with you.</p>
+
+        <h3>3. Placing an order</h3>
+        <p>You can place an order by calling or texting us at <a href="tel:+16892338293">(689) 233-8293</a>. An order is not accepted until we confirm it with you. We may decline or cancel any order, limit quantities, or correct a price or description that is listed in error. Age verification is required before any order is handed over (see our Age Policy).</p>
+
+        <h3>4. Product information and claims</h3>
+        <p>We work to keep product details accurate, but descriptions, images, and manufacturer information may contain errors or change. Any statements about a manufacturer's products are the manufacturer's, not ours.</p>
+        <p><strong>Hemp and CBD products:</strong> Statements regarding hemp or CBD products have not been evaluated by the U.S. Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. They are sold to adults 21 and older only.</p>
+
+        <h3>5. Intellectual property</h3>
+        <p>The site design, logo, text, and images are owned by Mile High Smoke Shop &amp; Convenience or used with permission, and may not be copied or reused without our written consent. Brand names and logos belong to their respective owners.</p>
+
+        <h3>6. No warranty; limitation of liability</h3>
+        <p>This site is provided "as is" without warranties of any kind. To the fullest extent allowed by law, Mile High is not liable for any indirect, incidental, or consequential damages arising from your use of the site or from products bought from us. Nothing here limits any right you have that cannot be limited under applicable law.</p>
+
+        <h3>7. Governing law</h3>
+        <p>These terms are governed by the laws of the State of Florida, without regard to its conflict-of-law rules. Any dispute will be handled in the state or federal courts located in Orange County, Florida.</p>
+
+        <h3>8. Changes and contact</h3>
+        <p>We may update these terms from time to time; the "last updated" date above shows the current version. Questions? Call or text <a href="tel:+16892338293">(689) 233-8293</a> or visit us at 7400 Southland Blvd #113, Orlando, FL 32809.</p>
+      </div>
+
+      <div data-lang-block="es">
+        <h2>Términos de Uso</h2>
+        <p>Bienvenido a Mile High Smoke Shop &amp; Convenience ("Mile High", "nosotros"). Estos Términos de Uso rigen el uso de este sitio web y de la información, el catálogo y las opciones de pedido que ofrecemos a través de él. Al usar este sitio, usted acepta estos términos. Si no está de acuerdo, por favor no use el sitio.</p>
+
+        <h3>1. Debe tener 21 años o más</h3>
+        <p>Este sitio y todo su contenido están dirigidos únicamente a adultos de al menos 21 años de edad. Al entrar al sitio, hacer un pedido o comprar con nosotros, usted confirma que tiene 21 años o más. Consulte nuestra <a href="#" data-goto="age">Política de Edad</a> para más detalles.</p>
+
+        <h3>2. Este sitio es un catálogo en línea</h3>
+        <p>Los productos, precios, descripciones y disponibilidad que se muestran aquí se ofrecen para su conveniencia y pueden cambiar en cualquier momento sin previo aviso. Que un producto aparezca en el sitio no garantiza que esté en existencia. Por ahora, los pedidos no se completan ni se pagan en este sitio web. Para comprar, usted se comunica directamente con la tienda y nosotros confirmamos la disponibilidad, el precio y la entrega o recogida con usted.</p>
+
+        <h3>3. Cómo hacer un pedido</h3>
+        <p>Puede hacer un pedido llamando o enviando un mensaje de texto al <a href="tel:+16892338293">(689) 233-8293</a>. Un pedido no se considera aceptado hasta que lo confirmemos con usted. Podemos rechazar o cancelar cualquier pedido, limitar cantidades o corregir un precio o una descripción publicados por error. Se requiere verificación de edad antes de entregar cualquier pedido (ver la Política de Edad).</p>
+
+        <h3>4. Información de los productos</h3>
+        <p>Procuramos mantener la información de los productos correcta, pero las descripciones, imágenes y datos del fabricante pueden contener errores o cambiar. Cualquier afirmación sobre los productos de un fabricante es del fabricante, no nuestra.</p>
+        <p><strong>Productos de hemp y CBD:</strong> Las afirmaciones sobre productos de hemp o CBD no han sido evaluadas por la Administración de Alimentos y Medicamentos de los EE. UU. (FDA). Estos productos no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Se venden únicamente a adultos de 21 años o más.</p>
+
+        <h3>5. Propiedad intelectual</h3>
+        <p>El diseño del sitio, el logotipo, los textos y las imágenes son propiedad de Mile High Smoke Shop &amp; Convenience o se usan con permiso, y no pueden copiarse ni reutilizarse sin nuestro consentimiento por escrito. Las marcas y logotipos pertenecen a sus respectivos dueños.</p>
+
+        <h3>6. Sin garantías; límite de responsabilidad</h3>
+        <p>Este sitio se ofrece "tal cual", sin garantías de ningún tipo. En la máxima medida permitida por la ley, Mile High no es responsable de daños indirectos, incidentales o consecuentes derivados del uso del sitio o de los productos comprados con nosotros. Nada de lo aquí expuesto limita los derechos que la ley no permita limitar.</p>
+
+        <h3>7. Ley aplicable</h3>
+        <p>Estos términos se rigen por las leyes del Estado de Florida. Cualquier disputa se tramitará en los tribunales estatales o federales ubicados en el Condado de Orange, Florida.</p>
+
+        <h3>8. Cambios y contacto</h3>
+        <p>Podemos actualizar estos términos de vez en cuando; la fecha de "última actualización" indica la versión vigente. ¿Preguntas? Llame o escriba al <a href="tel:+16892338293">(689) 233-8293</a> o visítenos en 7400 Southland Blvd #113, Orlando, FL 32809.</p>
+      </div>
+    </section>
+
+    <!-- ========================= PRIVACY ========================= -->
+    <section class="lp-panel" id="panel-privacy">
+      <div data-lang-block="en">
+        <h2>Privacy Policy</h2>
+        <p>This Privacy Policy explains what information Mile High Smoke Shop &amp; Convenience collects, how we use it, and the choices you have. We keep this simple because we collect very little.</p>
+
+        <h3>Information we collect</h3>
+        <ul>
+          <li><strong>When you contact us to order:</strong> your name, phone number, and, for delivery, your delivery address. If you message us, we keep the messages so we can fill and confirm your order.</li>
+          <li><strong>Automatically from the website:</strong> basic, non-identifying usage data such as pages viewed and general device or browser type, through standard web and analytics tools. The site does not require you to create an account.</li>
+        </ul>
+        <p>We do not collect payment card numbers on this website. Orders are arranged and paid for by phone, in store, or on delivery.</p>
+
+        <h3>How we use it</h3>
+        <ul>
+          <li>To take, confirm, prepare, and deliver your order.</li>
+          <li>To reply to your calls and messages.</li>
+          <li>To understand, in aggregate, how the site is used so we can improve it.</li>
+        </ul>
+
+        <h3>Text messages</h3>
+        <p>If you text us to place an order, you are agreeing to receive text messages from us about that order. We do not sell your number, and we do not add you to marketing texts without your okay. If we ever send promotional texts, you can reply <strong>STOP</strong> at any time to opt out.</p>
+
+        <h3>Who we share it with</h3>
+        <p>We do not sell your personal information. We share it only as needed to run the business, for example with a delivery driver to bring you your order, or with service providers such as our website and analytics tools. We may disclose information if required by law.</p>
+
+        <h3>How long we keep it</h3>
+        <p>We keep order and contact information only as long as needed for the order and for normal business and legal recordkeeping, then dispose of it.</p>
+
+        <h3>Your choices</h3>
+        <p>You can ask us what information we have about you, ask us to correct or delete it, or opt out of any promotional messages, by calling or texting <a href="tel:+16892338293">(689) 233-8293</a>.</p>
+
+        <h3>Not for anyone under 21</h3>
+        <p>This site and our products are intended only for adults 21 and older. We do not knowingly collect information from anyone under 21.</p>
+
+        <h3>Cookies</h3>
+        <p>The site may use basic cookies and similar tools to remember your language choice and to measure traffic. You can block cookies in your browser settings; the catalog will still work.</p>
+
+        <h3>Contact</h3>
+        <p>Questions about privacy? Call or text <a href="tel:+16892338293">(689) 233-8293</a>, or visit 7400 Southland Blvd #113, Orlando, FL 32809.</p>
+      </div>
+
+      <div data-lang-block="es">
+        <h2>Política de Privacidad</h2>
+        <p>Esta Política de Privacidad explica qué información recopila Mile High Smoke Shop &amp; Convenience, cómo la usamos y qué opciones tiene usted. La mantenemos sencilla porque recopilamos muy poco.</p>
+
+        <h3>Información que recopilamos</h3>
+        <ul>
+          <li><strong>Cuando nos contacta para hacer un pedido:</strong> su nombre, número de teléfono y, para entrega a domicilio, su dirección. Si nos escribe, conservamos los mensajes para poder preparar y confirmar su pedido.</li>
+          <li><strong>Automáticamente del sitio web:</strong> datos de uso básicos y no identificables, como páginas vistas y tipo general de dispositivo o navegador, mediante herramientas web y de análisis estándar. El sitio no le exige crear una cuenta.</li>
+        </ul>
+        <p>No recopilamos números de tarjetas de pago en este sitio web. Los pedidos se coordinan y se pagan por teléfono, en la tienda o en la entrega.</p>
+
+        <h3>Cómo la usamos</h3>
+        <ul>
+          <li>Para tomar, confirmar, preparar y entregar su pedido.</li>
+          <li>Para responder a sus llamadas y mensajes.</li>
+          <li>Para entender, de forma general, cómo se usa el sitio y así mejorarlo.</li>
+        </ul>
+
+        <h3>Mensajes de texto</h3>
+        <p>Si nos escribe para hacer un pedido, acepta recibir mensajes de texto nuestros sobre ese pedido. No vendemos su número ni lo agregamos a mensajes promocionales sin su permiso. Si alguna vez enviamos textos promocionales, puede responder <strong>STOP</strong> en cualquier momento para darse de baja.</p>
+
+        <h3>Con quién la compartimos</h3>
+        <p>No vendemos su información personal. La compartimos solo cuando es necesario para operar el negocio, por ejemplo con el repartidor para llevarle su pedido, o con proveedores de servicios como nuestras herramientas de sitio web y análisis. Podemos divulgar información si la ley lo exige.</p>
+
+        <h3>Cuánto tiempo la conservamos</h3>
+        <p>Conservamos la información de pedidos y contacto solo el tiempo necesario para el pedido y para el mantenimiento normal de registros comerciales y legales, y luego la eliminamos.</p>
+
+        <h3>Sus opciones</h3>
+        <p>Puede preguntarnos qué información tenemos sobre usted, pedir que la corrijamos o eliminemos, o darse de baja de cualquier mensaje promocional, llamando o escribiendo al <a href="tel:+16892338293">(689) 233-8293</a>.</p>
+
+        <h3>No es para menores de 21 años</h3>
+        <p>Este sitio y nuestros productos son solo para adultos de 21 años o más. No recopilamos información a sabiendas de personas menores de 21 años.</p>
+
+        <h3>Cookies</h3>
+        <p>El sitio puede usar cookies básicas y herramientas similares para recordar su idioma y medir el tráfico. Puede bloquear las cookies en la configuración de su navegador; el catálogo seguirá funcionando.</p>
+
+        <h3>Contacto</h3>
+        <p>¿Preguntas sobre privacidad? Llame o escriba al <a href="tel:+16892338293">(689) 233-8293</a>, o visítenos en 7400 Southland Blvd #113, Orlando, FL 32809.</p>
+      </div>
+    </section>
+
+    <!-- ========================= AGE ========================= -->
+    <section class="lp-panel" id="panel-age">
+      <div data-lang-block="en">
+        <h2>Age Policy — 21 and Over Only</h2>
+        <div class="lp-note"><strong>You must be 21 or older to buy anything from Mile High Smoke Shop &amp; Convenience.</strong> This applies in store, by phone, for local delivery, and for shipped items. No exceptions.</div>
+
+        <h3>Valid ID is required</h3>
+        <p>We require a valid, government-issued photo ID showing that you are at least 21 years old:</p>
+        <ul>
+          <li><strong>In store:</strong> at the counter before purchase.</li>
+          <li><strong>Local delivery:</strong> the person receiving the order must show valid ID to the driver, and the name should match the order. The driver checks ID at the door.</li>
+          <li><strong>Shipped items:</strong> eligible shipments are sent with an adult-signature (21+) requirement where available.</li>
+        </ul>
+
+        <h3>We will refuse the sale</h3>
+        <p>We will not complete a sale or delivery if a valid ID is not shown, if we believe the ID is false, if we believe the products are being bought for someone under 21, or if the buyer appears intoxicated. A driver may return an order to the store if age cannot be verified.</p>
+
+        <h3>No sales to minors; no straw purchases</h3>
+        <p>Selling or providing these products to anyone under 21 is illegal, and so is buying them on behalf of someone under 21. We take this seriously to protect our customers, our community, and our business.</p>
+
+        <h3>Age gate</h3>
+        <p>This website asks you to confirm your age before entering. Confirming is not a substitute for showing ID; ID is always checked before an order is handed over.</p>
+      </div>
+
+      <div data-lang-block="es">
+        <h2>Política de Edad — Solo Mayores de 21</h2>
+        <div class="lp-note"><strong>Debe tener 21 años o más para comprar cualquier producto en Mile High Smoke Shop &amp; Convenience.</strong> Esto aplica en la tienda, por teléfono, para entrega local y para artículos enviados. Sin excepciones.</div>
+
+        <h3>Se requiere identificación válida</h3>
+        <p>Exigimos una identificación con foto, emitida por el gobierno, que demuestre que tiene al menos 21 años:</p>
+        <ul>
+          <li><strong>En la tienda:</strong> en el mostrador antes de la compra.</li>
+          <li><strong>Entrega local:</strong> la persona que recibe el pedido debe mostrar una identificación válida al repartidor, y el nombre debe coincidir con el pedido. El repartidor verifica la identificación en la puerta.</li>
+          <li><strong>Artículos enviados:</strong> los envíos elegibles se envían con requisito de firma de un adulto (21+) donde esté disponible.</li>
+        </ul>
+
+        <h3>Rechazaremos la venta</h3>
+        <p>No completaremos una venta o entrega si no se muestra una identificación válida, si creemos que la identificación es falsa, si creemos que los productos se compran para un menor de 21 años, o si el comprador parece estar intoxicado. El repartidor puede devolver un pedido a la tienda si no se puede verificar la edad.</p>
+
+        <h3>Sin ventas a menores; sin compras por terceros</h3>
+        <p>Vender o proporcionar estos productos a cualquier persona menor de 21 años es ilegal, al igual que comprarlos en nombre de un menor de 21 años. Tomamos esto en serio para proteger a nuestros clientes, a nuestra comunidad y a nuestro negocio.</p>
+
+        <h3>Verificación de edad en el sitio</h3>
+        <p>Este sitio web le pide confirmar su edad antes de entrar. Confirmar no sustituye la presentación de una identificación; siempre se verifica la identificación antes de entregar un pedido.</p>
+      </div>
+    </section>
+
+    <!-- ========================= SHIPPING / DELIVERY ========================= -->
+    <section class="lp-panel" id="panel-shipping">
+      <div data-lang-block="en">
+        <h2>Orders, Delivery &amp; Shipping</h2>
+
+        <h3>How to order</h3>
+        <p>Browse the catalog on this site, then <strong>call or text us at <a href="tel:+16892338293">(689) 233-8293</a></strong> with what you want. We confirm what's in stock, the price, and whether you want pickup, local delivery, or shipping. Payment is handled by phone, in store, or on delivery.</p>
+
+        <h3>1. In-store pickup</h3>
+        <p>Order ahead and pick it up at 7400 Southland Blvd #113, Orlando, FL 32809, open daily 10am to 11pm. Bring a valid 21+ ID.</p>
+
+        <h3>2. Local delivery</h3>
+        <ul>
+          <li>We deliver locally within roughly 5 miles of the store with our own driver.</li>
+          <li>Same-day delivery when you order during store hours, subject to driver availability.</li>
+          <li>A valid 21+ ID is checked at the door; the order is not left unattended.</li>
+          <li>Delivery area, minimums, and any fee are confirmed when you place your order.</li>
+        </ul>
+
+        <h3>3. Shipping (eligible items only)</h3>
+        <div class="lp-note"><strong>By law, we do not ship vapes, e-liquids, nicotine, or tobacco products.</strong> Under the federal PACT Act, those items are available for in-store pickup or local delivery only.</div>
+        <p>We can ship eligible non-nicotine items, such as rolling papers, wraps, cones, filters, and similar accessories, within the United States. Shipped orders go to adults 21 and older, with an adult-signature requirement where available. Shipping times and costs are confirmed when you order.</p>
+
+        <h3>Returns</h3>
+        <p>For health and safety reasons, age-restricted and consumable products are generally final sale and cannot be returned once they leave the store. If an item is defective or you received the wrong item, contact us right away at <a href="tel:+16892338293">(689) 233-8293</a> and we'll make it right.</p>
+
+        <h3>Questions</h3>
+        <p>Call or text <a href="tel:+16892338293">(689) 233-8293</a>, or visit us at 7400 Southland Blvd #113, Orlando, FL 32809. Open daily 10am to 11pm. Se habla español.</p>
+      </div>
+
+      <div data-lang-block="es">
+        <h2>Pedidos, Entrega y Envíos</h2>
+
+        <h3>Cómo hacer un pedido</h3>
+        <p>Explore el catálogo en este sitio y luego <strong>llame o envíe un mensaje al <a href="tel:+16892338293">(689) 233-8293</a></strong> con lo que desea. Confirmamos qué hay en existencia, el precio y si prefiere recogida, entrega local o envío. El pago se coordina por teléfono, en la tienda o en la entrega.</p>
+
+        <h3>1. Recogida en la tienda</h3>
+        <p>Haga su pedido con anticipación y recójalo en 7400 Southland Blvd #113, Orlando, FL 32809, abierto todos los días de 10am a 11pm. Traiga una identificación válida de 21+.</p>
+
+        <h3>2. Entrega local</h3>
+        <ul>
+          <li>Entregamos localmente en un radio de aproximadamente 5 millas de la tienda con nuestro propio repartidor.</li>
+          <li>Entrega el mismo día cuando hace el pedido dentro del horario de la tienda, según la disponibilidad del repartidor.</li>
+          <li>Se verifica una identificación válida de 21+ en la puerta; el pedido no se deja sin entregar en persona.</li>
+          <li>El área de entrega, los mínimos y cualquier cargo se confirman al hacer el pedido.</li>
+        </ul>
+
+        <h3>3. Envíos (solo artículos elegibles)</h3>
+        <div class="lp-note"><strong>Por ley, no enviamos vapes, e-líquidos, nicotina ni productos de tabaco.</strong> Según la ley federal PACT Act, esos artículos están disponibles solo para recogida en tienda o entrega local.</div>
+        <p>Podemos enviar artículos elegibles sin nicotina, como papeles para armar, wraps, conos, filtros y accesorios similares, dentro de los Estados Unidos. Los pedidos enviados van a adultos de 21 años o más, con requisito de firma de un adulto donde esté disponible. Los tiempos y costos de envío se confirman al hacer el pedido.</p>
+
+        <h3>Devoluciones</h3>
+        <p>Por razones de salud y seguridad, los productos de edad restringida y consumibles son, por lo general, venta final y no se pueden devolver una vez que salen de la tienda. Si un artículo está defectuoso o recibió el artículo equivocado, contáctenos de inmediato al <a href="tel:+16892338293">(689) 233-8293</a> y lo resolveremos.</p>
+
+        <h3>Preguntas</h3>
+        <p>Llame o escriba al <a href="tel:+16892338293">(689) 233-8293</a>, o visítenos en 7400 Southland Blvd #113, Orlando, FL 32809. Abierto todos los días de 10am a 11pm. Se habla español.</p>
+      </div>
+    </section>
+
+    <div class="lp-foot">
+      <a href="index.html" data-lang-block="en">← Back to Mile High Smoke Shop</a>
+      <a href="index.html" data-lang-block="es">← Volver a Mile High Smoke Shop</a>
+      <p>© <span id="lpYear"></span> Mile High Smoke Shop &amp; Convenience · 7400 Southland Blvd #113, Orlando, FL 32809 · (689) 233-8293</p>
+    </div>
+  </div>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  // Honor the language chosen on the main site
+  var saved = "en";
+  try { saved = localStorage.getItem("mh_lang") === "es" ? "es" : "en"; } catch (e) {}
+  function applyLang(l) {
+    html.setAttribute("data-lp-lang", l);
+    html.lang = l;
+    var btn = document.getElementById("lpLang");
+    if (btn) btn.textContent = l === "en" ? "ES" : "EN";
+    try { localStorage.setItem("mh_lang", l); } catch (e) {}
+  }
+  applyLang(saved);
+  document.getElementById("lpLang").addEventListener("click", function () {
+    applyLang(html.getAttribute("data-lp-lang") === "en" ? "es" : "en");
+  });
+
+  // Tabs
+  var tabs = document.querySelectorAll(".lp-tab");
+  function show(name) {
+    document.querySelectorAll(".lp-panel").forEach(function (p) { p.classList.remove("active"); });
+    tabs.forEach(function (t) { t.classList.remove("active"); });
+    var panel = document.getElementById("panel-" + name);
+    var tab = document.querySelector('.lp-tab[data-tab="' + name + '"]');
+    if (panel) panel.classList.add("active");
+    if (tab) tab.classList.add("active");
+    if (history.replaceState) history.replaceState(null, "", "#" + name);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () { show(t.getAttribute("data-tab")); });
+  });
+  // Cross-links inside prose (e.g. "see our Age Policy")
+  document.querySelectorAll("[data-goto]").forEach(function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); show(a.getAttribute("data-goto")); });
+  });
+  // Open the tab named in the URL hash, if any
+  var h = (location.hash || "").replace("#", "");
+  if (h && document.getElementById("panel-" + h)) show(h);
+
+  var y = document.getElementById("lpYear");
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

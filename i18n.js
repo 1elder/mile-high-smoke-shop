@@ -120,6 +120,7 @@ const I18N = {
     "foot.all": "All products", "foot.company": "Company", "foot.contact": "Contact",
     "foot.hours": "Open daily 10am–11pm", "foot.rights": "All rights reserved.",
     "foot.warn": "⚠ You must be 21+ to purchase. Not for sale to minors.",
+    "foot.policies": "Policies", "foot.terms": "Terms of Use", "foot.privacy": "Privacy Policy", "foot.age": "Age Policy", "foot.shipping": "Delivery & Shipping",
     "cat.vapes": "Vapes", "cat.glass": "Glass", "cat.sale": "Sale",
 
     "mb.call": "Call",
@@ -249,6 +250,7 @@ const I18N = {
     "foot.all": "Todos los productos", "foot.company": "Compañía", "foot.contact": "Contacto",
     "foot.hours": "Abierto todos los días 10am–11pm", "foot.rights": "Todos los derechos reservados.",
     "foot.warn": "⚠ Debes tener 21+ para comprar. No se vende a menores.",
+    "foot.policies": "Políticas", "foot.terms": "Términos de Uso", "foot.privacy": "Privacidad", "foot.age": "Política de Edad", "foot.shipping": "Entrega y Envíos",
     "cat.vapes": "Vapes", "cat.glass": "Vidrio", "cat.sale": "Ofertas",
 
     "mb.call": "Llamar",
